@@ -1,0 +1,1077 @@
+<title>Interview Prep — Sprint Dashboard</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --ink:        #12151a;
+    --surface:    #1b2028;
+    --surface-2:  #232935;
+    --surface-3:  #2a3140;
+    --border:     #2e3543;
+    --text:       #eceef2;
+    --text-muted: #8992a6;
+    --text-faint: #5c6478;
+    --accent:     #7c9cff;
+    --accent-ink: #0d1230;
+    --seq:        #3987e5;
+    --good:       #29c46a;
+    --good-ink:   #06210f;
+    --warn:       #fab219;
+    --warn-ink:   #2b1c02;
+    --serious:    #ec835a;
+    --crit:       #ef5b5b;
+    --crit-ink:   #2b0808;
+    --mono: ui-monospace, "Cascadia Code", "SF Mono", "Fira Code", Consolas, "Roboto Mono", monospace;
+    --sans: -apple-system, "Segoe UI", system-ui, "Inter", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      color-scheme: light;
+      --ink:        #f4f5f8;
+      --surface:    #ffffff;
+      --surface-2:  #eef0f4;
+      --surface-3:  #e4e7ee;
+      --border:     #dbdfe6;
+      --text:       #1a1e27;
+      --text-muted: #5b6478;
+      --text-faint: #8992a6;
+      --accent:     #4c63d1;
+      --accent-ink: #eef0ff;
+      --seq:        #2a78d6;
+      --good:       #0f8a4a;
+      --good-ink:   #eafbf1;
+      --warn:       #9a6a04;
+      --warn-ink:   #fff6df;
+      --serious:    #b85222;
+      --crit:       #c23b3b;
+      --crit-ink:   #fdecec;
+    }
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --ink:        #f4f5f8;
+    --surface:    #ffffff;
+    --surface-2:  #eef0f4;
+    --surface-3:  #e4e7ee;
+    --border:     #dbdfe6;
+    --text:       #1a1e27;
+    --text-muted: #5b6478;
+    --text-faint: #8992a6;
+    --accent:     #4c63d1;
+    --accent-ink: #eef0ff;
+    --seq:        #2a78d6;
+    --good:       #0f8a4a;
+    --good-ink:   #eafbf1;
+    --warn:       #9a6a04;
+    --warn-ink:   #fff6df;
+    --serious:    #b85222;
+    --crit:       #c23b3b;
+    --crit-ink:   #fdecec;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
+
+  /* ---------- header ---------- */
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--ink) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .top-inner {
+    max-width: 1180px; margin: 0 auto; padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand .mark {
+    font-family: var(--mono); font-weight: 700; font-size: 13px;
+    letter-spacing: .12em; color: var(--accent); text-transform: uppercase;
+  }
+  .brand .sub { font-size: 12px; color: var(--text-faint); font-family: var(--mono); }
+  .top-stats { display: flex; align-items: center; gap: 18px; font-family: var(--mono); font-size: 12.5px; }
+  .top-stats .item { display: flex; align-items: center; gap: 6px; color: var(--text-muted); }
+  .top-stats .item b { color: var(--text); font-variant-numeric: tabular-nums; font-weight: 600; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .dot.crit { background: var(--crit); box-shadow: 0 0 0 3px color-mix(in srgb, var(--crit) 20%, transparent); }
+  .dot.warn { background: var(--warn); }
+  .dot.good { background: var(--good); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; margin: 24px 0;
+  }
+  .stat-tile { background: var(--surface); padding: 18px 20px; }
+  .stat-tile .label {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--text-faint); margin-bottom: 10px;
+  }
+  .stat-tile .value {
+    font-family: var(--mono); font-size: 30px; font-weight: 700; letter-spacing: -.01em;
+    font-variant-numeric: tabular-nums; line-height: 1;
+  }
+  .stat-tile .value .of { color: var(--text-faint); font-weight: 400; font-size: 18px; }
+  .stat-tile .note { margin-top: 8px; font-size: 12.5px; color: var(--text-muted); }
+  .stat-tile.accent .value { color: var(--accent); }
+  .stat-tile.crit .value { color: var(--crit); }
+  .stat-tile.good .value { color: var(--good); }
+
+  /* ---------- section shell ---------- */
+  section { margin: 40px 0; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; gap: 12px; flex-wrap: wrap; }
+  .sec-head h2 {
+    font-family: var(--mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--text); margin: 0; display: flex; align-items: center; gap: 10px;
+  }
+  .sec-head h2::before { content: ""; width: 3px; height: 14px; background: var(--accent); display: inline-block; border-radius: 2px; }
+  .sec-head .meta { font-size: 12.5px; color: var(--text-faint); font-family: var(--mono); }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px;
+  }
+
+  /* ---------- pills / chips ---------- */
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 11px;
+    font-weight: 600; letter-spacing: .02em; padding: 3px 8px; border-radius: 100px; white-space: nowrap;
+  }
+  .pill.crit { background: var(--crit-ink); color: var(--crit); }
+  .pill.warn { background: var(--warn-ink); color: var(--warn); }
+  .pill.good { background: var(--good-ink); color: var(--good); }
+  .pill.neutral { background: var(--surface-3); color: var(--text-muted); }
+  .pill.accent { background: var(--accent-ink); color: var(--accent); }
+
+  /* ---------- reviews table ---------- */
+  .review-group { margin-bottom: 18px; }
+  .review-group:last-child { margin-bottom: 0; }
+  .review-group-label {
+    display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11.5px;
+    text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 8px;
+  }
+  table.reviews { width: 100%; border-collapse: collapse; }
+  table.reviews tr { border-top: 1px solid var(--border); }
+  table.reviews tr:first-child { border-top: none; }
+  table.reviews td { padding: 9px 8px; font-size: 13.5px; vertical-align: middle; }
+  table.reviews td.name { font-weight: 500; }
+  table.reviews td.tag { text-align: right; white-space: nowrap; }
+  table.reviews tr:hover { background: var(--surface-2); }
+  .derive-flag {
+    font-family: var(--mono); font-size: 10px; color: var(--accent); border: 1px solid var(--accent);
+    border-radius: 4px; padding: 1px 4px; margin-left: 8px; letter-spacing: .04em;
+  }
+
+  /* ---------- track readiness ---------- */
+  .track-list { display: flex; flex-direction: column; gap: 14px; }
+  .track-row { display: grid; grid-template-columns: 150px 1fr 90px; align-items: center; gap: 16px; }
+  .track-row .tname { font-weight: 600; font-size: 14px; }
+  .track-row .tsub { display: block; font-size: 11.5px; color: var(--text-faint); font-weight: 400; margin-top: 2px; }
+  .bar-track { height: 8px; background: var(--surface-3); border-radius: 6px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; border-radius: 6px; background: var(--seq); }
+  .track-row .tval { text-align: right; font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; color: var(--text-muted); }
+
+  /* ---------- mastery bars ---------- */
+  .bars { display: flex; flex-direction: column; gap: 11px; }
+  .bar-row { display: grid; grid-template-columns: 160px 1fr 56px 90px; align-items: center; gap: 12px; }
+  .bar-row .bname { font-size: 13px; display: flex; align-items: center; gap: 6px; }
+  .bar-row .bval { font-family: var(--mono); font-size: 12.5px; text-align: right; font-variant-numeric: tabular-nums; color: var(--text-muted); }
+  .bar-row .bflag { display: flex; justify-content: flex-end; }
+  .stale-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--warn); flex-shrink: 0; }
+  .toggle-btn {
+    font-family: var(--mono); font-size: 11px; color: var(--text-muted); background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: 7px; padding: 5px 10px; cursor: pointer;
+  }
+  .toggle-btn:hover { color: var(--text); border-color: var(--accent); }
+  table.mastery-table { width: 100%; border-collapse: collapse; display: none; }
+  table.mastery-table.shown { display: table; }
+  .bars.hidden { display: none; }
+  table.mastery-table td, table.mastery-table th { padding: 7px 8px; font-size: 13px; text-align: left; border-top: 1px solid var(--border); }
+  table.mastery-table th { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; color: var(--text-faint); border-top: none; }
+  table.mastery-table td.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+  /* ---------- mistake pattern bars ---------- */
+  .mbar-row { display: grid; grid-template-columns: 210px 1fr 34px; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .mbar-row .mname { font-size: 13px; }
+  .mbar-row .mname small { display: block; color: var(--text-faint); font-size: 11px; }
+  .mbar-track { height: 16px; background: var(--surface-3); border-radius: 4px; overflow: hidden; }
+  .mbar-fill { height: 100%; background: var(--seq); border-radius: 4px; }
+  .mbar-row .mval { font-family: var(--mono); font-size: 12.5px; text-align: right; color: var(--text-muted); }
+  .callout {
+    margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: var(--warn-ink);
+    border: 1px solid color-mix(in srgb, var(--warn) 35%, transparent); font-size: 13px; color: var(--text);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .callout .pill { flex-shrink: 0; margin-top: 1px; }
+  .callout.crit { background: var(--crit-ink); border-color: color-mix(in srgb, var(--crit) 35%, transparent); }
+
+  /* ---------- flashcards ---------- */
+  .flashcard-widget { display: flex; flex-direction: column; gap: 16px; }
+  .fc-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+  .fc-filter-btn {
+    font-family: var(--mono); font-size: 11.5px; padding: 5px 12px; border-radius: 100px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text-muted); cursor: pointer;
+  }
+  .fc-filter-btn:hover { color: var(--text); }
+  .fc-filter-btn.active { background: var(--accent-ink); color: var(--accent); border-color: var(--accent); }
+  .fc-stage { perspective: 1400px; }
+  .fc-card { position: relative; min-height: 190px; cursor: pointer; user-select: none; }
+  .fc-inner {
+    position: relative; width: 100%; height: 100%; min-height: 190px;
+    transition: transform .5s cubic-bezier(.4,.2,.2,1); transform-style: preserve-3d;
+  }
+  .fc-card.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face {
+    position: absolute; inset: 0; backface-visibility: hidden; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--surface-2); padding: 22px 24px 30px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .fc-face.back {
+    transform: rotateY(180deg); background: var(--accent-ink);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  .fc-tag { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-faint); margin-bottom: 10px; }
+  .fc-face.back .fc-tag { color: var(--accent); }
+  .fc-text { font-size: 15px; line-height: 1.6; }
+  .fc-face.back .fc-text { font-size: 14px; }
+  .fc-text code { font-family: var(--mono); background: var(--surface-3); padding: 1px 5px; border-radius: 4px; font-size: .92em; }
+  .fc-face.back .fc-text code { background: color-mix(in srgb, var(--accent) 18%, transparent); }
+  .fc-hint { position: absolute; bottom: 10px; right: 14px; font-family: var(--mono); font-size: 10px; color: var(--text-faint); }
+  .fc-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .fc-progress { font-family: var(--mono); font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .fc-btns { display: flex; gap: 8px; }
+  .fc-btn {
+    font-family: var(--mono); font-size: 12px; padding: 7px 14px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text); cursor: pointer;
+  }
+  .fc-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .fc-mode-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .fc-due-note { font-family: var(--mono); font-size: 12px; color: var(--text-muted); }
+  .fc-assess { display: flex; gap: 10px; }
+  .fc-assess .fc-btn { flex: 1; text-align: center; padding: 9px 14px; }
+  .fc-btn.fc-got { border-color: color-mix(in srgb, var(--good) 55%, var(--border)); color: var(--good); }
+  .fc-btn.fc-got:hover { background: var(--good-ink); }
+  .fc-btn.fc-miss { border-color: color-mix(in srgb, var(--crit) 55%, var(--border)); color: var(--crit); }
+  .fc-btn.fc-miss:hover { background: var(--crit-ink); }
+  .fc-box-dots { display: flex; gap: 4px; margin-top: 14px; }
+  .fc-box-dot { width: 6px; height: 6px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 25%, transparent); }
+  .fc-box-dot.filled { background: var(--accent); }
+  .fc-empty-state { text-align: center; padding: 40px 10px; color: var(--text-muted); font-size: 13.5px; min-height: 190px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+  .fc-empty-state .big { font-size: 30px; }
+  .fc-sync-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 4px; border-top: 1px dashed var(--border); }
+  .fc-export-box {
+    width: 100%; min-height: 64px; margin-top: 4px; font-family: var(--mono); font-size: 10.5px;
+    background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px; resize: vertical;
+  }
+
+  /* ---------- two-col grid ---------- */
+  .grid2 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; align-items: start; }
+  @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } .hero { grid-template-columns: repeat(2,1fr); } .track-row { grid-template-columns: 110px 1fr 70px; } }
+
+  /* ---------- timeline ---------- */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: grid; grid-template-columns: 78px 1fr; gap: 14px; padding: 12px 0; border-top: 1px solid var(--border); }
+  .tl-item:first-child { border-top: none; }
+  .tl-date { font-family: var(--mono); font-size: 11.5px; color: var(--text-faint); padding-top: 2px; }
+  .tl-body h4 { margin: 0 0 4px; font-size: 13.5px; font-weight: 600; }
+  .tl-body p { margin: 0; font-size: 12.8px; color: var(--text-muted); line-height: 1.55; }
+
+  /* ---------- pace ---------- */
+  .pace-bars { display: flex; flex-direction: column; gap: 14px; margin-bottom: 18px; }
+  .pace-bar-row .pace-label { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px; }
+  .pace-bar-row .pace-label b { color: var(--text); font-variant-numeric: tabular-nums; }
+  .pace-bar-track { height: 10px; background: var(--surface-3); border-radius: 6px; overflow: hidden; }
+  .pace-bar-fill { height: 100%; border-radius: 6px; background: var(--seq); }
+  .pace-bar-fill.target { background: repeating-linear-gradient(135deg, var(--text-faint), var(--text-faint) 4px, transparent 4px, transparent 8px); opacity: .5; }
+  .daystrip { display: grid; grid-template-columns: repeat(30, 1fr); gap: 4px; margin: 4px 0 12px; }
+  .day-cell { aspect-ratio: 1; border-radius: 3px; background: var(--surface-3); }
+  .day-cell.session { background: var(--seq); }
+  .day-cell.gap { background: var(--crit-ink); border: 1px solid color-mix(in srgb, var(--crit) 45%, transparent); }
+  .day-cell.today { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .daystrip-legend { display: flex; gap: 16px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+  .daystrip-legend .lg-item { display: flex; align-items: center; gap: 6px; }
+  .lg-swatch { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+  /* ---------- STAR story bank ---------- */
+  .theme-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .theme-chip { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11.5px; padding: 5px 10px; border-radius: 100px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted); }
+  .theme-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--crit); flex-shrink: 0; }
+  .star-form { display: flex; flex-direction: column; gap: 12px; padding-top: 16px; border-top: 1px dashed var(--border); }
+  .star-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .star-row select, .star-row input {
+    font-family: var(--sans); font-size: 13px; padding: 9px 11px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text); flex: 1; min-width: 160px;
+  }
+  .star-field label {
+    font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--text-faint); display: block; margin-bottom: 5px;
+  }
+  .star-field textarea {
+    width: 100%; min-height: 64px; font-family: var(--sans); font-size: 13px; padding: 10px;
+    border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); resize: vertical;
+  }
+  .star-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 700px) { .star-grid { grid-template-columns: 1fr; } .daystrip { grid-template-columns: repeat(15, 1fr); } }
+
+  /* ---------- applications ---------- */
+  .apptiers { display: flex; flex-direction: column; gap: 8px; }
+  .apptier-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-top: 1px solid var(--border); font-size: 13px; }
+  .apptier-row:first-child { border-top: none; }
+  .apptier-row .n { font-family: var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+  footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 11.5px; color: var(--text-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  a { color: var(--accent); }
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <span class="mark">🎯 Interview Prep</span>
+      <span class="sub">/ mission control</span>
+    </div>
+    <div class="top-stats">
+      <span class="item"><span class="dot warn"></span>8 reviews overdue/due</span>
+      <span class="item">Pace: <b style="color:var(--crit)">BEHIND</b></span>
+      <span class="item" id="countdown-chip">—</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="stat-tile accent">
+      <div class="label">Sprint Day</div>
+      <div class="value">13<span class="of"> / 30</span></div>
+      <div class="note">started 07-10 · ends 08-09 · 17 days left</div>
+    </div>
+    <div class="stat-tile crit">
+      <div class="label">Reviews Overdue</div>
+      <div class="value">5</div>
+      <div class="note">Pascal's Triangle 4d late · 4 more 1d late</div>
+    </div>
+    <div class="stat-tile">
+      <div class="label">DSA Live-Verified</div>
+      <div class="value">34</div>
+      <div class="note">since 07-10, on top of 195/455 import baseline</div>
+    </div>
+    <div class="stat-tile good">
+      <div class="label">Consistency Streak</div>
+      <div class="value">2<span class="of"> days</span></div>
+      <div class="note">07-21, 07-22 · 8/12 Block B cleared today · longest streak was 4</div>
+    </div>
+  </div>
+
+  <section id="pace">
+    <div class="sec-head">
+      <h2>Sprint Pace</h2>
+      <span class="meta">show-rate is the diagnosed root cause, not session quality</span>
+    </div>
+    <div class="card">
+      <div class="pace-bars">
+        <div class="pace-bar-row">
+          <div class="pace-label"><span>Time elapsed</span><b>43% (day 13/30)</b></div>
+          <div class="pace-bar-track"><div class="pace-bar-fill" style="width:43%"></div></div>
+        </div>
+        <div class="pace-bar-row">
+          <div class="pace-label"><span>Sprint scope done <span class="pill neutral" style="margin-left:6px">last audited 07-20, not live-recomputed</span></span><b>~15%</b></div>
+          <div class="pace-bar-track"><div class="pace-bar-fill" style="width:15%; background:var(--crit)"></div></div>
+        </div>
+        <div class="pace-bar-row">
+          <div class="pace-label"><span>Show-rate — days with a real session</span><b>8/13 (0.62x expected)</b></div>
+          <div class="pace-bar-track"><div class="pace-bar-fill" style="width:62%"></div></div>
+        </div>
+      </div>
+      <div class="daystrip-legend">
+        <span class="lg-item"><span class="lg-swatch" style="background:var(--seq)"></span>session happened</span>
+        <span class="lg-item"><span class="lg-swatch" style="background:var(--crit-ink); border:1px solid var(--crit)"></span>gap day</span>
+        <span class="lg-item"><span class="lg-swatch" style="background:var(--surface-3)"></span>upcoming</span>
+        <span class="lg-item"><span class="lg-swatch" style="background:var(--accent); outline:2px solid var(--accent)"></span>today</span>
+      </div>
+      <div class="daystrip" id="daystrip"></div>
+      <div class="callout">
+        <span class="pill accent">projection</span>
+        <span>5 sessions in 11 days at the 07-20 audit (0.4x) → 7 sessions in 13 days now (0.54x) — improving, not fixed. At current pace: ready ~mid-September. Daily sessions from here + one zero-track item/day (per the standing rule) pulls it back to ~mid-August.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="sec-head">
+      <h2>Reviews Queue</h2>
+      <span class="meta">as of 2026-07-22 · spaced-repetition, DSA</span>
+    </div>
+    <div class="card">
+      <div class="review-group">
+        <div class="review-group-label"><span class="pill crit">● overdue</span> 5 items — a separate session cleared 8/12 of yesterday's batch, these are what's left</div>
+        <table class="reviews">
+          <tr><td class="name">Pascal's Triangle</td><td class="tag"><span class="pill neutral">review #1</span> <span class="pill crit">4d late</span></td></tr>
+          <tr><td class="name">Next Greater Element <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill neutral">review #1</span> <span class="pill warn">1d late</span></td></tr>
+          <tr><td class="name">Queue via Two Stacks <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill neutral">review #1</span> <span class="pill warn">1d late</span></td></tr>
+          <tr><td class="name">Rotate Matrix 90° <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill neutral">review #3</span> <span class="pill warn">1d late</span></td></tr>
+          <tr><td class="name">Frog Jump (DP-3) <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill neutral">review #3</span> <span class="pill warn">1d late</span></td></tr>
+        </table>
+      </div>
+      <div class="review-group">
+        <div class="review-group-label"><span class="pill warn">● due today</span> 3 items</div>
+        <table class="reviews">
+          <tr><td class="name">Nearest Smaller to the Left <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill neutral">review #1</span></td></tr>
+          <tr><td class="name">Stock Span Problem <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill neutral">review #1</span></td></tr>
+          <tr><td class="name">Stock Buy and Sell</td><td class="tag"><span class="pill neutral">review #3</span> <span class="pill accent">rolled from 07-21</span></td></tr>
+        </table>
+      </div>
+      <div class="review-group">
+        <div class="review-group-label">✓ cleared today (8/12 batch)</div>
+        <table class="reviews">
+          <tr><td class="name">Valid Parentheses</td><td class="tag"><span class="pill good">clean</span></td></tr>
+          <tr><td class="name">Min Stack <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill warn">2 hints — pop-invalidation gap</span></td></tr>
+          <tr><td class="name">Second Largest Element</td><td class="tag"><span class="pill good">clean</span></td></tr>
+          <tr><td class="name">Rotate Array <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill crit">3rd repeat-rust — "why" never internalized</span></td></tr>
+          <tr><td class="name">Longest Subarray Sum K <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill warn">1 hint</span></td></tr>
+          <tr><td class="name">Next Permutation <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill good">clean</span></td></tr>
+          <tr><td class="name">Kadane's Max Subarray <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill warn">"why" hand-wavy, 1 hint</span></td></tr>
+          <tr><td class="name">Print Subarray with Max Sum <span class="derive-flag">DERIVE</span></td><td class="tag"><span class="pill crit">2nd decay in 24h — full rebuild needed</span></td></tr>
+        </table>
+      </div>
+      <div class="callout crit">
+        <span class="pill crit">chronic</span>
+        <span><b>Rotate Array's "why" derivation has failed 3 reviews in a row</b> (mechanics fine each time) and <b>Print Subarray's start=tempStart point decayed twice within 24 hours</b> — both flagged in mistake_journal as needing an out-of-schedule recall check, not just the normal interval. Both now boosted to always surface first in the Flashcard Review section below.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="flashcards">
+    <div class="sec-head">
+      <h2>Flashcard Review</h2>
+      <span class="meta">19 cards · spaced repetition, 2 chronic items pinned</span>
+    </div>
+    <div class="card flashcard-widget">
+      <div class="fc-mode-row">
+        <div class="fc-filters" id="fc-filters"></div>
+        <div class="fc-mode-btns">
+          <button class="fc-filter-btn active" id="fc-mode-due">today's review</button>
+          <button class="fc-filter-btn" id="fc-mode-all">browse all</button>
+        </div>
+      </div>
+      <div class="fc-due-note" id="fc-due-note"></div>
+      <div class="fc-stage">
+        <div class="fc-card" id="fc-card">
+          <div class="fc-inner">
+            <div class="fc-face front">
+              <div class="fc-tag" id="fc-tag-front">Topic</div>
+              <div class="fc-text" id="fc-q">Q</div>
+              <div class="fc-hint">tap to flip</div>
+            </div>
+            <div class="fc-face back">
+              <div class="fc-tag" id="fc-tag-back">Answer</div>
+              <div class="fc-text" id="fc-a">A</div>
+              <div class="fc-box-dots" id="fc-box-dots"></div>
+              <div class="fc-hint">tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        <div class="fc-empty-state" id="fc-empty-state" style="display:none">
+          <div class="big">✓</div>
+          <div id="fc-empty-msg">Nothing due right now — nice work.</div>
+        </div>
+      </div>
+      <div class="fc-assess" id="fc-assess" style="display:none">
+        <button class="fc-btn fc-miss" id="fc-miss">✕ missed it</button>
+        <button class="fc-btn fc-got" id="fc-got">✓ got it</button>
+      </div>
+      <div class="fc-controls">
+        <div class="fc-progress" id="fc-progress">1 / 19</div>
+        <div class="fc-btns">
+          <button class="fc-btn" id="fc-prev">← prev</button>
+          <button class="fc-btn" id="fc-shuffle">shuffle</button>
+          <button class="fc-btn" id="fc-next">next →</button>
+        </div>
+      </div>
+      <div class="fc-sync-row">
+        <button class="fc-btn" id="fc-export">💾 save progress to repo</button>
+        <span class="fc-due-note" id="fc-sync-note">repo backup: <span id="fc-sync-date">—</span></span>
+      </div>
+      <textarea id="fc-export-box" class="fc-export-box" readonly style="display:none"></textarea>
+    </div>
+  </section>
+
+  <section id="tracks">
+    <div class="sec-head">
+      <h2>Track Readiness</h2>
+      <span class="meta">5 tracks · DSA-heavy sprint</span>
+    </div>
+    <div class="card">
+      <div class="track-list">
+        <div class="track-row">
+          <div class="tname">DSA<span class="tsub">Striver A2Z</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:43%"></div></div>
+          <div class="tval">43% <span class="pill accent" style="margin-left:6px">active</span></div>
+        </div>
+        <div class="track-row">
+          <div class="tname">System Design<span class="tsub">no data</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>
+          <div class="tval"><span class="pill neutral">0%</span></div>
+        </div>
+        <div class="track-row">
+          <div class="tname">LLD<span class="tsub">no data</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>
+          <div class="tval"><span class="pill neutral">0%</span></div>
+        </div>
+        <div class="track-row">
+          <div class="tname">Behavioral<span class="tsub">0/6 STAR stories</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>
+          <div class="tval"><span class="pill crit">overdue</span></div>
+        </div>
+        <div class="track-row">
+          <div class="tname">Java<span class="tsub">no data</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>
+          <div class="tval"><span class="pill neutral">0%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="star-bank">
+    <div class="sec-head">
+      <h2>STAR Story Bank</h2>
+      <span class="meta">0/6 drafted — Behavioral, most overdue zero-track item</span>
+    </div>
+    <div class="card">
+      <div class="theme-chips" id="theme-chips"></div>
+      <div class="star-form">
+        <div class="star-row">
+          <select id="star-theme"></select>
+          <input type="text" id="star-title" placeholder="Story title (e.g. \"Rewrote the payments retry logic under deadline\")" />
+        </div>
+        <div class="star-grid">
+          <div class="star-field"><label>Situation</label><textarea id="star-s" placeholder="Context — what was going on, why it mattered"></textarea></div>
+          <div class="star-field"><label>Task</label><textarea id="star-t" placeholder="What specifically were you responsible for"></textarea></div>
+          <div class="star-field"><label>Action</label><textarea id="star-a" placeholder="What YOU did, concretely — not the team"></textarea></div>
+          <div class="star-field"><label>Result</label><textarea id="star-r" placeholder="Outcome with real numbers if possible — vague results are a tracked weakness"></textarea></div>
+        </div>
+      </div>
+      <div class="fc-sync-row" style="margin-top:12px">
+        <button class="fc-btn" id="star-export">💾 save draft to repo</button>
+        <span class="fc-due-note">draft autosaves in this browser as you type — nothing reaches the repo until you export</span>
+      </div>
+      <textarea id="star-export-box" class="fc-export-box" readonly style="display:none"></textarea>
+    </div>
+  </section>
+
+  <section id="mastery">
+    <div class="sec-head">
+      <h2>DSA Topic Mastery</h2>
+      <span class="meta">
+        <button class="toggle-btn" id="mastery-toggle">view as table</button>
+      </span>
+    </div>
+    <div class="card">
+      <div class="bars" id="mastery-bars">
+        <div class="bar-row"><div class="bname"><span class="stale-dot" title="solved 2-3mo ago, 0 re-verification reps"></span>Binary Search</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bval">100%</div><div class="bflag"><span class="pill warn">stale</span></div></div>
+        <div class="bar-row"><div class="bname"><span class="stale-dot"></span>LinkedList</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bval">100%</div><div class="bflag"><span class="pill warn">stale</span></div></div>
+        <div class="bar-row"><div class="bname"><span class="stale-dot"></span>BST</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bval">100%</div><div class="bflag"><span class="pill warn">stale</span></div></div>
+        <div class="bar-row"><div class="bname"><span class="stale-dot"></span>Trees</div><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div><div class="bval">92%</div><div class="bflag"><span class="pill warn">stale</span></div></div>
+        <div class="bar-row"><div class="bname"><span class="stale-dot"></span>DP</div><div class="bar-track"><div class="bar-fill" style="width:79%"></div></div><div class="bval">79%</div><div class="bflag"><span class="pill good">1 rep</span></div></div>
+        <div class="bar-row"><div class="bname"><span class="stale-dot"></span>Tries</div><div class="bar-track"><div class="bar-fill" style="width:86%"></div></div><div class="bval">86%</div><div class="bflag"><span class="pill warn">stale</span></div></div>
+        <div class="bar-row"><div class="bname">Arrays</div><div class="bar-track"><div class="bar-fill" style="width:71%"></div></div><div class="bval">71%</div><div class="bflag"><span class="pill neutral">Hard 0/11</span></div></div>
+        <div class="bar-row"><div class="bname">Strings</div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><div class="bval">20%</div><div class="bflag"></div></div>
+        <div class="bar-row"><div class="bname">Recursion</div><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div><div class="bval">8%</div><div class="bflag"><span class="pill crit">gap</span></div></div>
+        <div class="bar-row"><div class="bname">Bit Manipulation</div><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><div class="bval">6%</div><div class="bflag"><span class="pill crit">gap</span></div></div>
+        <div class="bar-row"><div class="bname">Basics</div><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><div class="bval">0%</div><div class="bflag"><span class="pill neutral">low pri</span></div></div>
+        <div class="bar-row"><div class="bname">Sorting</div><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><div class="bval">0%</div><div class="bflag"><span class="pill neutral">low pri</span></div></div>
+      </div>
+      <table class="mastery-table" id="mastery-table">
+        <tr><th>Topic</th><th>Solved</th><th>%</th><th>Status</th></tr>
+        <tr><td>Binary Search</td><td class="num">32/32</td><td class="num">100%</td><td>stale — 0 reps</td></tr>
+        <tr><td>LinkedList</td><td class="num">31/31</td><td class="num">100%</td><td>stale — 0 reps</td></tr>
+        <tr><td>BST</td><td class="num">16/16</td><td class="num">100%</td><td>stale — 0 reps</td></tr>
+        <tr><td>Trees</td><td class="num">36/39</td><td class="num">92%</td><td>stale — 0 reps, 3 unconfirmed gaps</td></tr>
+        <tr><td>DP</td><td class="num">44/56</td><td class="num">79%</td><td>1 rep clean (Frog Jump #2), 43 unverified</td></tr>
+        <tr><td>Tries</td><td class="num">6/7</td><td class="num">86%</td><td>stale — 0 reps, 1 known gap</td></tr>
+        <tr><td>Arrays</td><td class="num">27/38</td><td class="num">71%</td><td>Basics/Easy/Medium done, Hard 0/11</td></tr>
+        <tr><td>Strings</td><td class="num">3/15</td><td class="num">20%</td><td>confirmed gap</td></tr>
+        <tr><td>Recursion</td><td class="num">2/25</td><td class="num">8%</td><td>priority gap</td></tr>
+        <tr><td>Bit Manipulation</td><td class="num">1/18</td><td class="num">6%</td><td>priority gap</td></tr>
+        <tr><td>Basics</td><td class="num">0/31</td><td class="num">0%</td><td>low priority, prior experience</td></tr>
+        <tr><td>Sorting</td><td class="num">0/7</td><td class="num">0%</td><td>low priority, prior experience</td></tr>
+      </table>
+      <div class="callout">
+        <span class="pill warn">notice</span>
+        <span>Stack/Queue is new material in progress (5 + 1 solved, no fixed sheet total yet) — not shown as a %. Sliding Window, Heaps, Greedy, Graphs, and the sheet's final section (~130+ problems) remain fully untouched. Graphs is flagged as the single highest-priority zero-start item given its interview weight.</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid2">
+    <section id="mistakes">
+      <div class="sec-head"><h2>Mistake Patterns</h2><span class="meta">33 logged entries</span></div>
+      <div class="card">
+        <div class="mbar-row">
+          <div class="mname">Arrays<small>two-pointer, prefix-sum, invariants</small></div>
+          <div class="mbar-track"><div class="mbar-fill" style="width:100%"></div></div>
+          <div class="mval">23</div>
+        </div>
+        <div class="mbar-row">
+          <div class="mname">Arrays / Matrix<small>transpose, boundary-shrink traversal</small></div>
+          <div class="mbar-track"><div class="mbar-fill" style="width:26%"></div></div>
+          <div class="mval">6</div>
+        </div>
+        <div class="mbar-row">
+          <div class="mname">Stack / Monotonic Stack<small>direction rule, span formulas, pop-invalidation</small></div>
+          <div class="mbar-track"><div class="mbar-fill" style="width:22%"></div></div>
+          <div class="mval">5</div>
+        </div>
+        <div class="mbar-row">
+          <div class="mname">DP<small>recurrence derivation, base cases</small></div>
+          <div class="mbar-track"><div class="mbar-fill" style="width:9%"></div></div>
+          <div class="mval">2</div>
+        </div>
+        <div class="callout crit">
+          <span class="pill crit">pattern</span>
+          <span><b>Two problems are now chronic (3+/2+ decays), not just recall-decay-in-general</b>: Rotate Array's "why" has never landed in 3 reviews, Print Subarray's <code>start=tempStart</code> point decayed twice in 24h. The <code>[derive]</code>-tag fix (open reviews with "why" before code, adopted 07-20) is surfacing these, not causing them — they were probably always this weak, just unmeasured before.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <div class="sec-head"><h2>Recent Sessions</h2><span class="meta">latest first</span></div>
+      <div class="card">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">07-21/22</div>
+            <div class="tl-body">
+              <h4>Two parallel sessions: Block A (here) + review batch (local)</h4>
+              <p>This session: Nearest Smaller Left and Stock Span solved, both needed real Socratic escalation to generalize the monotonic-stack direction rule and derive the span formula. Separately, a local CLI session cleared 8/12 of the due review batch — 2 came back clean, 2 needed real hints, and 2 are now flagged chronic (see Mistake Patterns).</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">07-20</div>
+            <div class="tl-body">
+              <h4>Print Subarray closed · Stack/Queue started</h4>
+              <p>Closed the 3-day-old Print Subarray derivation. Valid Parentheses + Min Stack clean; Next Greater Element and Queue via Two Stacks each needed one real correction. New session protocol adopted (3-block split) after an audit found 0.4x planned pace.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">07-17</div>
+            <div class="tl-body">
+              <h4>26-item review backlog cleared after a 3-day gap</h4>
+              <p>22 clean/single-hint, 6 needed real correction — first evidence that gaps between sessions let decay compound, independent of topic strength.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="applications">
+    <div class="sec-head"><h2>Applications</h2><span class="meta">0 active — target list only</span></div>
+    <div class="card">
+      <div class="apptiers">
+        <div class="apptier-row"><span>Tier 1 — fintech/payments direct match</span><span class="n">9 targets</span></div>
+        <div class="apptier-row"><span>Tier 2 — big tech generalist</span><span class="n">8 targets</span></div>
+        <div class="apptier-row"><span>Tier 3 — quant/HFT, DSA-heavy</span><span class="n">7 targets</span></div>
+        <div class="apptier-row"><span>Tier 4 — traditional finance tech</span><span class="n">4 targets</span></div>
+        <div class="apptier-row"><span>Tier 5 — reach / referral-only</span><span class="n">2 targets</span></div>
+      </div>
+      <div class="callout" style="margin-top:14px">
+        <span class="pill neutral">note</span>
+        <span>Tier 3 (quant/HFT) is nearly pure DSA — heaviest overlap with the current sprint, but also the highest bar. Worth 2-3 applications once Graphs/Heaps/Greedy close, not before.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Snapshot from <code>InterviewPrep</code> @ <code>041df16</code>, generated 2026-07-22 (merged with a parallel local session).</span>
+    <span>Refreshed daily by a scheduled agent session — not a live feed. Ask to change the schedule anytime.</span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var end = new Date("2026-08-09T23:59:59Z");
+    var chip = document.getElementById("countdown-chip");
+    function tick() {
+      var now = new Date();
+      var ms = end - now;
+      var days = Math.max(0, Math.ceil(ms / 86400000));
+      chip.textContent = days + "d to sprint end";
+    }
+    tick();
+    setInterval(tick, 3600000);
+  })();
+
+  (function () {
+    // topic weight = approx share of logged mistakes in that area (mirrors the
+    // Mistake Patterns chart) — used only as a tiebreaker after due-ness.
+    var WEAK_TOPICS = { "Arrays": 23, "Stack & Queue": 5 };
+    // chronic items (repeat-decay per mistake_journal) — always surface first regardless of box
+    var CHRONIC_BOOST = { "arr-rotate-why": 500000, "arr-print-subarray-why": 500000 };
+    var BOX_INTERVAL_DAYS = [null, 0, 1, 3, 7, 14]; // index = box 1..5, box1 always due same-day-next
+
+    var CARDS = [
+      { id: "arr-rotate-o1", topic: "Arrays", q: "Rotate array O(1) space — what's the trick?",
+        a: "Reverse both chunks individually, then reverse the whole array (double reversal cancels the internal flip, keeps just the chunk swap)." },
+      { id: "arr-rotate-why", topic: "Arrays", q: "Rotate array — WHY does reverse-chunk1 / reverse-chunk2 / reverse-whole actually rotate (not just the steps)?",
+        a: "Reversing each chunk first flips its internal order; reversing the whole array afterward double-flips each chunk back to original order (cancels) while swapping the two chunks' positions. Net effect: rotation. <b>Failed 3 reviews in a row</b> — mechanics always fine, this derivation never sticks." },
+      { id: "arr-print-subarray-why", topic: "Arrays", q: "Print Subarray with Max Sum — why <code>start=tempStart</code> not <code>start=i</code> on a new max?",
+        a: "<code>tempStart</code> is the current running (unreset-since-last-negative) window's start — at the moment a new max is found, that running window IS the winning one. <code>start=i</code> would wrongly report a length-1 subarray. <b>Decayed twice in 24h</b> — treat as still fragile." },
+      { id: "arr-prefixsum-no-extra-plus1", topic: "Arrays", q: "Prefix-sum+hashmap longest-subarray variant — after seeding <code>{0:-1}</code>, do you add an extra +1 to <code>i - map[sum-k]</code>?",
+        a: "No — the -1 seed already produces the correct <code>i+1</code> length when needed (<code>i - (-1) = i+1</code>). Adding another +1 on top double-counts." },
+      { id: "arr-kadanes-allneg", topic: "Arrays", q: "Kadane's — how do you avoid losing the max on an all-negative array?",
+        a: "Record <code>max=max(max,sum)</code> every iteration, before the <code>if sum&lt;0: sum=0</code> reset — not just at reset time." },
+      { id: "arr-subarray-neg", topic: "Arrays", q: "Subarray sum problems with negative numbers allowed — sliding window or prefix-sum+hashmap?",
+        a: "Prefix-sum+hashmap. Sliding window needs monotonic sum growth, breaks with negatives." },
+      { id: "arr-next-perm", topic: "Arrays", q: "Next Permutation — 3 steps?",
+        a: "Find pivot (largest i, arr[i]&lt;arr[i+1]) → find rightmost j&gt;i with arr[j]&gt;arr[i] strictly → swap, then reverse suffix after i." },
+      { id: "arr-rotate-matrix", topic: "Arrays", q: "Rotate Matrix 90° in-place — 2 steps?",
+        a: "Transpose (i≠j only, diagonal stays fixed) → reverse each row fully (not just swap endpoints)." },
+      { id: "arr-dutch-flag", topic: "Arrays", q: "Dutch National Flag (sort 0s/1s/2s) — why does mid advance on a 0-swap but not a 2-swap?",
+        a: "0-swap brings in a <b>known</b> value from the confirmed-1 zone (safe to advance). 2-swap brings in an <b>unknown</b> value from unprocessed region (must recheck it, don't advance)." },
+      { id: "arr-window-postloop", topic: "Arrays", q: "Standing checklist item for window/run-tracking loops (Max Consecutive Ones and others) — what do you always check?",
+        a: "What happens to the last window when the loop ends without a reset trigger — post-loop finalization, don't rely only on the reset branch." },
+      { id: "sq-valid-parens", topic: "Stack & Queue", q: "Valid Parentheses — what do you check after the loop ends, and why?",
+        a: "Stack must be empty — catches unclosed opens (e.g. <code>\"((\"</code>), not just mismatched closes." },
+      { id: "sq-min-stack", topic: "Stack & Queue", q: "Min Stack — how do you get O(1) getMin without recomputing?",
+        a: "Each stack frame stores <code>(value, minSoFar)</code> as a pair, so the min up to that point is always at the top." },
+      { id: "sq-nge-direction", topic: "Stack & Queue", q: "Next Greater Element — direction of traversal and what the stack holds?",
+        a: "Right to left, monotonic-decreasing stack of <b>original values</b> (not computed answers) — pop everything ≤ current before reading top as the answer." },
+      { id: "sq-queue2stacks-transfer", topic: "Stack & Queue", q: "Queue via Two Stacks — when do you transfer stack1→stack2?",
+        a: "Only when stack2 is empty. If stack2 has elements, pop straight from it, no transfer." },
+      { id: "sq-queue2stacks-amortized", topic: "Stack & Queue", q: "Queue via Two Stacks — why is it O(1) amortized despite a single dequeue sometimes costing O(n)?",
+        a: "Each element is pushed once, transferred at most once, popped once — ≤3 ops total across its whole lifetime, however those ops are distributed across n dequeue calls." },
+      { id: "sq-nearest-smaller-left", topic: "Stack & Queue", q: "Nearest Smaller to the Left — direction of traversal and pop condition?",
+        a: "Left to right (traversal starts at the end matching the query side); pop while <code>top &gt;= current</code> (&gt;= not &gt;, so equal-valued ties don't count as \"smaller\")." },
+      { id: "sq-monostack-direction-rule", topic: "Stack & Queue", q: "Monotonic stack — general rule for picking traversal direction on any \"nearest X in direction Y\" problem?",
+        a: "Start traversal from the end matching side Y, so the stack already holds the already-processed elements on the queried side by the time you reach index i." },
+      { id: "sq-stock-span-formula", topic: "Stack & Queue", q: "Stock Span Problem — formula for span given the nearest-greater-left index?",
+        a: "<code>span = curIndex - nearestGreaterLeftIdx</code> (no extra -1) — derive via inclusive-range counting (<code>b-a+1</code>, a=ngeIdx+1, b=curIndex), don't guess the offset. The -1 sentinel for \"no such element\" needs no special-casing." },
+      { id: "sq-min-stack-why-not-global", topic: "Stack & Queue", q: "Min Stack — why not just one global <code>minSoFar</code> variable instead of a per-frame pair?",
+        a: "A global var can't un-learn a min once its owning element pops — e.g. push 2, push 5, push 1 (global→1), pop 1 → global still says 1, but true remaining min is 2. Per-frame storage restores the prior min automatically on pop." }
+    ];
+
+    // Repo-backed backup of review state (box/lastSeen/wrong per card id), embedded at
+    // publish time from the last "save progress to repo" export a user pasted into a
+    // session. Empty until the first export is processed. This is how progress survives
+    // a cleared browser or a different device — the page can't push/pull live (no
+    // network calls allowed here), so this is a point-in-time snapshot, not a live sync.
+    var SEED_STATE = {};
+    var SEED_SYNCED_AT = null;
+
+    var STORAGE_KEY = "ipdash_flashcard_state_v1";
+    function loadState() {
+      try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : {}; }
+      catch (e) { return {}; }
+    }
+    function saveState(s) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch (e) {}
+    }
+    var state = loadState();
+    // restore from the repo-backed seed for any card missing locally, or where the seed
+    // is strictly newer than what this browser has (covers: cleared storage, new device)
+    (function mergeSeed() {
+      Object.keys(SEED_STATE).forEach(function (id) {
+        var seed = SEED_STATE[id];
+        var local = state[id];
+        var seedNewer = seed.lastSeen && (!local || !local.lastSeen || new Date(seed.lastSeen) > new Date(local.lastSeen));
+        if (!local || seedNewer) state[id] = seed;
+      });
+      if (Object.keys(SEED_STATE).length) saveState(state);
+    })();
+    function cardState(id) { return state[id] || { box: 1, lastSeen: null, wrong: 0 }; }
+    function daysSince(iso) { return iso ? (Date.now() - new Date(iso).getTime()) / 86400000 : Infinity; }
+    function isDue(c) {
+      var s = cardState(c.id);
+      // chronic repeat-decay items stay "due" until 2 consecutive clean self-ratings (box >= 3)
+      if (CHRONIC_BOOST[c.id] && s.box < 3) return true;
+      if (!s.lastSeen) return true;
+      var interval = BOX_INTERVAL_DAYS[s.box];
+      return interval === null || daysSince(s.lastSeen) >= interval;
+    }
+    function priority(c) {
+      var s = cardState(c.id);
+      var overdueBy = s.lastSeen ? daysSince(s.lastSeen) - (BOX_INTERVAL_DAYS[s.box] || 0) : 9999;
+      return overdueBy * 1000 + (WEAK_TOPICS[c.topic] || 0) + (CHRONIC_BOOST[c.id] || 0);
+    }
+    function shuffle(arr) {
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+      }
+      return arr;
+    }
+
+    var topics = ["All"].concat(Array.from(new Set(CARDS.map(function (c) { return c.topic; }))));
+    var filterEl = document.getElementById("fc-filters");
+    var modeDueBtn = document.getElementById("fc-mode-due");
+    var modeAllBtn = document.getElementById("fc-mode-all");
+    var dueNoteEl = document.getElementById("fc-due-note");
+    var stageEl = document.querySelector(".fc-stage");
+    var cardEl = document.getElementById("fc-card");
+    var emptyEl = document.getElementById("fc-empty-state");
+    var emptyMsgEl = document.getElementById("fc-empty-msg");
+    var qEl = document.getElementById("fc-q");
+    var aEl = document.getElementById("fc-a");
+    var tagFrontEl = document.getElementById("fc-tag-front");
+    var tagBackEl = document.getElementById("fc-tag-back");
+    var boxDotsEl = document.getElementById("fc-box-dots");
+    var assessEl = document.getElementById("fc-assess");
+    var missBtn = document.getElementById("fc-miss");
+    var gotBtn = document.getElementById("fc-got");
+    var progressEl = document.getElementById("fc-progress");
+    var prevBtn = document.getElementById("fc-prev");
+    var nextBtn = document.getElementById("fc-next");
+    var shuffleBtn = document.getElementById("fc-shuffle");
+    var exportBtn = document.getElementById("fc-export");
+    var exportBox = document.getElementById("fc-export-box");
+    var syncDateEl = document.getElementById("fc-sync-date");
+
+    syncDateEl.textContent = SEED_SYNCED_AT ? SEED_SYNCED_AT.slice(0, 10) : "never — click to create one";
+    exportBtn.addEventListener("click", function () {
+      var payload =
+        "This is a flashcard review progress export from my InterviewPrep dashboard " +
+        "(Progress/dashboard/dashboard.html). Please update DSA/flashcards/review_log.md " +
+        "with this data (box level 1-5, last-reviewed date, miss count per card id — " +
+        "overwrite each card's line if it already exists, add new ones, never delete " +
+        "cards missing from this export since they may just be not-yet-due), append an " +
+        "Export History line with today's date, then sync the dashboard's SEED_STATE/" +
+        "SEED_SYNCED_AT in Progress/dashboard/dashboard.html from the updated file and " +
+        "commit+push both.\n\nexported: " + new Date().toISOString() + "\n\n" +
+        JSON.stringify(state, null, 0);
+      exportBox.value = payload;
+      exportBox.style.display = "block";
+      exportBox.focus();
+      exportBox.select();
+      try { navigator.clipboard.writeText(payload); } catch (e) {}
+      exportBtn.textContent = "✓ copied with instructions — paste to Claude";
+      setTimeout(function () { exportBtn.textContent = "💾 save progress to repo"; }, 4000);
+    });
+
+    var mode = "due"; // "due" | "all"
+    var activeTopic = "All";
+    var deck = [];
+    var idx = 0;
+
+    function baseSet() {
+      var pool = activeTopic === "All" ? CARDS.slice() : CARDS.filter(function (c) { return c.topic === activeTopic; });
+      return mode === "due" ? pool.filter(isDue) : pool;
+    }
+
+    function rebuildDeck() {
+      deck = baseSet();
+      if (mode === "due") deck.sort(function (a, b) { return priority(b) - priority(a); });
+      idx = 0;
+      render();
+    }
+
+    function render() {
+      cardEl.classList.remove("flipped");
+      assessEl.style.display = "none";
+      if (deck.length === 0) {
+        stageEl.style.setProperty("--placeholder", "1");
+        cardEl.style.display = "none";
+        emptyEl.style.display = "flex";
+        progressEl.textContent = "0 / 0";
+        emptyMsgEl.textContent = mode === "due"
+          ? "Nothing due right now — everything's within its review window."
+          : "No cards match this filter.";
+        dueNoteEl.textContent = "";
+        return;
+      }
+      cardEl.style.display = "";
+      emptyEl.style.display = "none";
+      var c = deck[idx];
+      tagFrontEl.textContent = c.topic;
+      tagBackEl.textContent = c.topic + " — answer";
+      qEl.innerHTML = c.q;
+      aEl.innerHTML = c.a;
+      progressEl.textContent = (idx + 1) + " / " + deck.length;
+      var s = cardState(c.id);
+      boxDotsEl.innerHTML = "";
+      for (var i = 1; i <= 5; i++) {
+        var d = document.createElement("span");
+        d.className = "fc-box-dot" + (i <= s.box ? " filled" : "");
+        boxDotsEl.appendChild(d);
+      }
+      dueNoteEl.textContent = mode === "due"
+        ? deck.length + " due now — sorted by most overdue, then weakest topic"
+        : "browsing full deck (" + deck.length + " cards)";
+    }
+
+    function recordAnswer(got) {
+      var c = deck[idx];
+      var s = cardState(c.id);
+      s.lastSeen = new Date().toISOString();
+      s.box = got ? Math.min(5, s.box + 1) : 1;
+      if (!got) s.wrong = (s.wrong || 0) + 1;
+      state[c.id] = s;
+      saveState(state);
+      if (mode === "due") {
+        deck.splice(idx, 1);
+        if (idx >= deck.length) idx = 0;
+      } else {
+        idx = (idx + 1) % deck.length;
+      }
+      render();
+    }
+
+    filterEl.innerHTML = "";
+    topics.forEach(function (t) {
+      var btn = document.createElement("button");
+      btn.className = "fc-filter-btn" + (t === "All" ? " active" : "");
+      btn.textContent = t;
+      btn.addEventListener("click", function () {
+        activeTopic = t;
+        Array.from(filterEl.children).forEach(function (b) { b.classList.toggle("active", b === btn); });
+        rebuildDeck();
+      });
+      filterEl.appendChild(btn);
+    });
+
+    modeDueBtn.addEventListener("click", function () {
+      mode = "due"; modeDueBtn.classList.add("active"); modeAllBtn.classList.remove("active"); rebuildDeck();
+    });
+    modeAllBtn.addEventListener("click", function () {
+      mode = "all"; modeAllBtn.classList.add("active"); modeDueBtn.classList.remove("active"); rebuildDeck();
+    });
+
+    cardEl.addEventListener("click", function () {
+      var flipped = cardEl.classList.toggle("flipped");
+      assessEl.style.display = flipped ? "flex" : "none";
+    });
+    missBtn.addEventListener("click", function (e) { e.stopPropagation(); recordAnswer(false); });
+    gotBtn.addEventListener("click", function (e) { e.stopPropagation(); recordAnswer(true); });
+    prevBtn.addEventListener("click", function () { if (!deck.length) return; idx = (idx - 1 + deck.length) % deck.length; render(); });
+    nextBtn.addEventListener("click", function () { if (!deck.length) return; idx = (idx + 1) % deck.length; render(); });
+    shuffleBtn.addEventListener("click", function () { shuffle(deck); idx = 0; render(); });
+
+    rebuildDeck();
+  })();
+
+  (function () {
+    var btn = document.getElementById("mastery-toggle");
+    var bars = document.getElementById("mastery-bars");
+    var table = document.getElementById("mastery-table");
+    var shown = false;
+    btn.addEventListener("click", function () {
+      shown = !shown;
+      bars.classList.toggle("hidden", shown);
+      table.classList.toggle("shown", shown);
+      btn.textContent = shown ? "view as bars" : "view as table";
+    });
+  })();
+
+  (function () {
+    // Sprint start 2026-07-10 = day 1. Reconstructed from dated entries in
+    // DSA/Progress/progress.md — only days with an actual logged session are
+    // marked, everything else in the elapsed range is a real gap, not a guess.
+    var SPRINT_START = new Date("2026-07-10T00:00:00Z");
+    var SESSION_DAYS = [1, 2, 3, 4, 8, 11, 12, 13]; // 07-10,11,12,13, 17, 20, 21, 22
+    var TODAY_DAY = 13;
+    var strip = document.getElementById("daystrip");
+    for (var d = 1; d <= 30; d++) {
+      var cell = document.createElement("div");
+      var dateStr = new Date(SPRINT_START.getTime() + (d - 1) * 86400000).toISOString().slice(0, 10);
+      var cls = "day-cell";
+      if (d === TODAY_DAY) cls += " today";
+      if (SESSION_DAYS.indexOf(d) !== -1) cls += " session";
+      else if (d < TODAY_DAY) cls += " gap";
+      cell.className = cls;
+      cell.title = "Day " + d + " — " + dateStr + (SESSION_DAYS.indexOf(d) !== -1 ? " — session" : d < TODAY_DAY ? " — gap" : " — upcoming");
+      strip.appendChild(cell);
+    }
+  })();
+
+  (function () {
+    var THEMES = ["Leadership", "Conflict", "Failure", "Ownership", "Impact", "Ambiguity"];
+    var DRAFTED = []; // themes with a story already committed to the repo — updated by Claude on export processing
+    var chipsEl = document.getElementById("theme-chips");
+    var themeSelect = document.getElementById("star-theme");
+    var titleEl = document.getElementById("star-title");
+    var sEl = document.getElementById("star-s");
+    var tEl = document.getElementById("star-t");
+    var aEl = document.getElementById("star-a");
+    var rEl = document.getElementById("star-r");
+    var exportBtn = document.getElementById("star-export");
+    var exportBox = document.getElementById("star-export-box");
+    var STORAGE_KEY = "ipdash_star_draft_v1";
+
+    chipsEl.innerHTML = "";
+    THEMES.forEach(function (t) {
+      var chip = document.createElement("span");
+      chip.className = "theme-chip";
+      var drafted = DRAFTED.indexOf(t) !== -1;
+      chip.innerHTML = '<span class="dot" style="background:' + (drafted ? "var(--good)" : "var(--crit)") + '"></span>' + t + (drafted ? " — drafted" : " — not drafted");
+      chipsEl.appendChild(chip);
+    });
+
+    themeSelect.innerHTML = "";
+    THEMES.forEach(function (t) {
+      var opt = document.createElement("option");
+      opt.value = t; opt.textContent = t;
+      themeSelect.appendChild(opt);
+    });
+
+    function loadDraft() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch (e) { return {}; }
+    }
+    function saveDraft() {
+      var draft = { theme: themeSelect.value, title: titleEl.value, s: sEl.value, t: tEl.value, a: aEl.value, r: rEl.value };
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(draft)); } catch (e) {}
+    }
+    var saved = loadDraft();
+    if (saved.theme) themeSelect.value = saved.theme;
+    if (saved.title) titleEl.value = saved.title;
+    if (saved.s) sEl.value = saved.s;
+    if (saved.t) tEl.value = saved.t;
+    if (saved.a) aEl.value = saved.a;
+    if (saved.r) rEl.value = saved.r;
+
+    [themeSelect, titleEl, sEl, tEl, aEl, rEl].forEach(function (el) {
+      el.addEventListener("input", saveDraft);
+      el.addEventListener("change", saveDraft);
+    });
+
+    exportBtn.addEventListener("click", function () {
+      if (!titleEl.value.trim() || !sEl.value.trim() || !tEl.value.trim() || !aEl.value.trim() || !rEl.value.trim()) {
+        exportBtn.textContent = "fill in all 5 fields first";
+        setTimeout(function () { exportBtn.textContent = "💾 save draft to repo"; }, 2500);
+        return;
+      }
+      var slug = titleEl.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      var payload =
+        "This is a STAR story draft from my InterviewPrep dashboard (Progress/dashboard/dashboard.html). " +
+        "Please create Behavioral/stories/" + slug + ".md following the format described in " +
+        "Behavioral/stories/README.md (one file per story, Situation/Task/Action/Result sections, " +
+        "tag with the themes it covers), using the content below. Then update " +
+        "Behavioral/Progress/progress.md's \"Stories Drafted\" checklist to add it, and update the " +
+        "dashboard's theme-chips DRAFTED array and the \"N/6 drafted\" meta text to match. Treat this " +
+        "as a first draft, not final — pressure-test it the way the Socratic Behavioral protocol " +
+        "describes (vague outcomes, missing metrics, weak \"what would you do differently\") before " +
+        "considering it done, same as any other track.\n\n" +
+        "Title: " + titleEl.value.trim() + "\n" +
+        "Primary theme: " + themeSelect.value + "\n\n" +
+        "SITUATION:\n" + sEl.value.trim() + "\n\n" +
+        "TASK:\n" + tEl.value.trim() + "\n\n" +
+        "ACTION:\n" + aEl.value.trim() + "\n\n" +
+        "RESULT:\n" + rEl.value.trim();
+      exportBox.value = payload;
+      exportBox.style.display = "block";
+      exportBox.focus();
+      exportBox.select();
+      try { navigator.clipboard.writeText(payload); } catch (e) {}
+      exportBtn.textContent = "✓ copied with instructions — paste to Claude";
+      setTimeout(function () { exportBtn.textContent = "💾 save draft to repo"; }, 4000);
+    });
+  })();
+</script>

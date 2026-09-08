@@ -1,0 +1,905 @@
+{
+  "metadata": {
+    "sheet": "Strivers A2Z DSA Sheet",
+    "source": "TakeUForward",
+    "exportDate": "2026-07-10",
+    "platform": "Codolio",
+    "totalQuestions": 455,
+    "totalSolved": 195,
+    "completionPercentage": 42.86
+  },
+  "summary": {
+    "overall_progress": {
+      "total": 455,
+      "solved": 195,
+      "remaining": 260,
+      "completion_percentage": 42.86
+    }
+  },
+  "topics": [
+    {
+      "topic": "Step 1: Learn the basics",
+      "solved": 0,
+      "total": 31,
+      "completionPercentage": 0,
+      "subtopics": [
+        {
+          "name": "Lec 1: Things to Know in C++/Java/Python or any language",
+          "solved": 0,
+          "total": 9,
+          "completionPercentage": 0,
+          "questions": [
+            {
+              "title": "User Input / Output",
+              "difficulty": "Basic",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "What are arrays, strings?",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Data Types",
+              "difficulty": "Basic",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "If Else statements",
+              "difficulty": "Basic",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Switch Statement",
+              "difficulty": "Basic",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "For loops",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "While loops",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Functions (Pass by Reference and Value)",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "HackerRank"
+            },
+            {
+              "title": "Time Complexity",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 2: Build-up Logical Thinking",
+          "solved": 0,
+          "total": 1,
+          "completionPercentage": 0,
+          "questions": [
+            {
+              "title": "Patterns",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 3: Learn STL/Java-Collections",
+          "solved": 0,
+          "total": 2,
+          "completionPercentage": 0,
+          "questions": [
+            {
+              "title": "C++ STL",
+              "difficulty": "Medium",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Java Collections",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 4: Know Basic Maths",
+          "solved": 0,
+          "total": 7,
+          "completionPercentage": 0,
+          "questions": [
+            {
+              "title": "Count Digits",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Reverse a Number",
+              "difficulty": "Medium",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Check Palindrome",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "GCD Or HCF",
+              "difficulty": "Basic",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Armstrong Numbers",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Print all Divisors",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Check for Prime",
+              "difficulty": "Medium",
+              "solved": false,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 5: Learn Basic Recursion",
+          "solved": 0,
+          "total": 9,
+          "completionPercentage": 0,
+          "questions": [
+            {
+              "title": "Understand recursion by print something N times",
+              "difficulty": "Basic",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Print name N times using recursion",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Print 1 to N using recursion",
+              "difficulty": "Basic",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Print N to 1 using recursion",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Sum of first N numbers",
+              "difficulty": "Basic",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Factorial of N numbers",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Reverse an array",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Check if a string is palindrome or not",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Fibonacci Number",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 6: Learn Basic Hashing",
+          "solved": 0,
+          "total": 3,
+          "completionPercentage": 0,
+          "questions": [
+            {
+              "title": "Hashing Theory",
+              "difficulty": "Medium",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Counting frequencies of array elements",
+              "difficulty": "Easy",
+              "solved": false,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find the highest/lowest frequency element",
+              "difficulty": "Medium",
+              "solved": false,
+              "platform": "TakeUForward"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Step 4: Binary Search",
+      "solved": 32,
+      "total": 32,
+      "completionPercentage": 100,
+      "subtopics": [
+        {
+          "name": "Lec 1: BS on 1D Arrays",
+          "solved": 13,
+          "total": 13,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Binary Search to find X in sorted array",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Implement Lower Bound",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Implement Upper Bound",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Search Insert Position",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Floor/Ceil in Sorted Array",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find the first or last occurrence of a given number",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Count occurrences of a number in sorted array",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Search in Rotated Sorted Array I",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Search in Rotated Sorted Array II",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find minimum in Rotated Sorted Array",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find out how many times has an array been rotated",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Single element in a Sorted Array",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find peak element",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 2: BS on Answers",
+          "solved": 14,
+          "total": 14,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Find square root of a number in log n",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find the Nth root of a number",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Koko Eating Bananas",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Minimum days to make M bouquets",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find the smallest Divisor",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Capacity to Ship Packages within D Days",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Kth Missing Positive Number",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Aggressive Cows",
+              "difficulty": "Hard",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Book Allocation Problem",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Split array - Largest Sum",
+              "difficulty": "Hard",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Painter's partition",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Minimize Max Distance to Gas Station",
+              "difficulty": "Hard",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Median of 2 sorted arrays",
+              "difficulty": "Hard",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Kth element of 2 sorted arrays",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 3: BS on 2D Arrays",
+          "solved": 5,
+          "total": 5,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Find the row with maximum number of 1's",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Search in a 2D matrix",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Search in a row and column wise sorted matrix",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find Peak Element (2D Matrix)",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Matrix Median",
+              "difficulty": "Hard",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Step 6: Learn LinkedList",
+      "solved": 31,
+      "total": 31,
+      "completionPercentage": 100,
+      "subtopics": [
+        {
+          "name": "Lec 1: Learn 1D LinkedList",
+          "solved": 5,
+          "total": 5,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Introduction to LinkedList",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Inserting a node in LinkedList",
+              "difficulty": "Basic",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Deleting a node in LinkedList",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find the length of the linkedlist",
+              "difficulty": "Basic",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Search an element in the LL",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 2: Learn Doubly LinkedList",
+          "solved": 4,
+          "total": 4,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Introduction to DLL",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Insert a node in DLL",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Delete a node in DLL",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Reverse a DLL",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Step 13: Binary Trees",
+      "solved": 36,
+      "total": 39,
+      "completionPercentage": 92.31,
+      "subtopics": [
+        {
+          "name": "Lec 1: Traversals",
+          "solved": 13,
+          "total": 13,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Introduction to Trees",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Binary Tree Representation in C++",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Binary Tree Representation in Java",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Binary Tree Traversals",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Preorder Traversal",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Inorder Traversal",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Post-order Traversal",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Level order Traversal / Spiral form",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Iterative Preorder Traversal",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Iterative Inorder Traversal",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Post-order Traversal using 2 stack",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Post-order Traversal using 1 stack",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Preorder, Inorder, and Postorder in one Traversal",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Step 14: Binary Search Trees",
+      "solved": 16,
+      "total": 16,
+      "completionPercentage": 100,
+      "subtopics": [
+        {
+          "name": "Lec 1: Concepts",
+          "solved": 3,
+          "total": 3,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Introduction to Binary Search Tree",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Search in a Binary Search Tree",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find Min/Max in BST",
+              "difficulty": "Basic",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 2: Practice Problems",
+          "solved": 13,
+          "total": 13,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Ceil in a Binary Search Tree",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Floor in a Binary Search Tree",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Insert a given Node in BST",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Delete a Node in BST",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Find K-th smallest/largest element in BST",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Check if a tree is a BST or BT",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "LCA in Binary Search Tree",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Construct a BST from preorder traversal",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Inorder Successor/Predecessor in BST",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Merge 2 BST's",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Two Sum In BST",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Recover BST",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Largest BST in Binary Tree",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Step 16: Dynamic Programming",
+      "solved": 44,
+      "total": 56,
+      "completionPercentage": 78.57,
+      "subtopics": [
+        {
+          "name": "Lec 1: Introduction to DP",
+          "solved": 1,
+          "total": 1,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Dynamic Programming Introduction",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 2: 1D DP",
+          "solved": 5,
+          "total": 5,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Climbing Stairs",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Frog Jump (DP-3)",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Frog Jump with k distances (DP-4)",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Maximum sum of non-adjacent elements (DP 5)",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "House Robber (DP 6)",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Step 17: Tries",
+      "solved": 6,
+      "total": 7,
+      "completionPercentage": 85.71,
+      "subtopics": [
+        {
+          "name": "Lec 1: Theory",
+          "solved": 1,
+          "total": 1,
+          "completionPercentage": 100,
+          "questions": [
+            {
+              "title": "Implement TRIE | INSERT | SEARCH | STARTSWITH",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            }
+          ]
+        },
+        {
+          "name": "Lec 2: Problems",
+          "solved": 5,
+          "total": 6,
+          "completionPercentage": 83.33,
+          "questions": [
+            {
+              "title": "Implement Trie - 2 (Prefix Tree)",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Longest String with All Prefixes",
+              "difficulty": "Hard",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Number of Distinct Substrings",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Bit PreRequisites for TRIE Problems",
+              "difficulty": "Easy",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Maximum XOR of two numbers in array",
+              "difficulty": "Medium",
+              "solved": true,
+              "platform": "TakeUForward"
+            },
+            {
+              "title": "Maximum XOR With an Element From Array",
+              "difficulty": "Hard",
+              "solved": false,
+              "platform": "TakeUForward"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

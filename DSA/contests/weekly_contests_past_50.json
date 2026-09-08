@@ -1,0 +1,2202 @@
+[
+  {
+    "contest_number": 516,
+    "contest_slug": "weekly-contest-516",
+    "contest_name": "Weekly Contest 516",
+    "url": "https://leetcode.com/contest/weekly-contest-516/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 4030,
+        "title": "Check ASCII Palindromic",
+        "slug": "check-ascii-palindromic",
+        "url": "https://leetcode.com/problems/check-ascii-palindromic/",
+        "rating": 1165.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 4031,
+        "title": "Find All Numbers Disappeared in an Array II",
+        "slug": "find-all-numbers-disappeared-in-an-array-ii",
+        "url": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array-ii/",
+        "rating": 1416.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 4032,
+        "title": "Longest Subarray With at Most K Distinct Prime Factors",
+        "slug": "longest-subarray-with-at-most-k-distinct-prime-factors",
+        "url": "https://leetcode.com/problems/longest-subarray-with-at-most-k-distinct-prime-factors/",
+        "rating": 1758.7,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 4033,
+        "title": "Valid K-Unique Subarrays I",
+        "slug": "valid-k-unique-subarrays-i",
+        "url": "https://leetcode.com/problems/valid-k-unique-subarrays-i/",
+        "rating": 2314.4,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 515,
+    "contest_slug": "weekly-contest-515",
+    "contest_name": "Weekly Contest 515",
+    "url": "https://leetcode.com/contest/weekly-contest-515/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 4024,
+        "title": "Nearest Available Drone",
+        "slug": "nearest-available-drone",
+        "url": "https://leetcode.com/problems/nearest-available-drone/",
+        "rating": 1184.5,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 4025,
+        "title": "Minimize the Maximum Waiting Time at Synchronized Traffic Lights",
+        "slug": "minimize-the-maximum-waiting-time-at-synchronized-traffic-lights",
+        "url": "https://leetcode.com/problems/minimize-the-maximum-waiting-time-at-synchronized-traffic-lights/",
+        "rating": 1456.7,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 4026,
+        "title": "Maximum Gap Between Stations",
+        "slug": "maximum-gap-between-stations",
+        "url": "https://leetcode.com/problems/maximum-gap-between-stations/",
+        "rating": 1675.2,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 4027,
+        "title": "Elevator Requests III",
+        "slug": "elevator-requests-iii",
+        "url": "https://leetcode.com/problems/elevator-requests-iii/",
+        "rating": 2200.9,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 514,
+    "contest_slug": "weekly-contest-514",
+    "contest_name": "Weekly Contest 514",
+    "url": "https://leetcode.com/contest/weekly-contest-514/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 4014,
+        "title": "Minimum Total Price After Applying Discounts",
+        "slug": "minimum-total-price-after-applying-discounts",
+        "url": "https://leetcode.com/problems/minimum-total-price-after-applying-discounts/",
+        "rating": 1192.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 4015,
+        "title": "Weighted Sum of a Tree",
+        "slug": "weighted-sum-of-a-tree",
+        "url": "https://leetcode.com/problems/weighted-sum-of-a-tree/",
+        "rating": 1534.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 4016,
+        "title": "Maximum Area of Two Non-Overlapping Square Submatrices",
+        "slug": "maximum-area-of-two-non-overlapping-square-submatrices",
+        "url": "https://leetcode.com/problems/maximum-area-of-two-non-overlapping-square-submatrices/",
+        "rating": 1958.7,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 4017,
+        "title": "Peaks in Array II",
+        "slug": "peaks-in-array-ii",
+        "url": "https://leetcode.com/problems/peaks-in-array-ii/",
+        "rating": 2515.8,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 513,
+    "contest_slug": "weekly-contest-513",
+    "contest_name": "Weekly Contest 513",
+    "url": "https://leetcode.com/contest/weekly-contest-513/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 4010,
+        "title": "Maximize Pair Strength Using GCD",
+        "slug": "maximize-pair-strength-using-gcd",
+        "url": "https://leetcode.com/problems/maximize-pair-strength-using-gcd/",
+        "rating": 1216.4,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 4011,
+        "title": "Count Subarrays With Even Odd Ratio I",
+        "slug": "count-subarrays-with-even-odd-ratio-i",
+        "url": "https://leetcode.com/problems/count-subarrays-with-even-odd-ratio-i/",
+        "rating": 1391.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 4012,
+        "title": "Count of Unfinished Tasks After Each Shift",
+        "slug": "count-of-unfinished-tasks-after-each-shift",
+        "url": "https://leetcode.com/problems/count-of-unfinished-tasks-after-each-shift/",
+        "rating": 1735.7,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 4013,
+        "title": "Count Subarrays With Even Odd Ratio II",
+        "slug": "count-subarrays-with-even-odd-ratio-ii",
+        "url": "https://leetcode.com/problems/count-subarrays-with-even-odd-ratio-ii/",
+        "rating": 2155.6,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 512,
+    "contest_slug": "weekly-contest-512",
+    "contest_name": "Weekly Contest 512",
+    "url": "https://leetcode.com/contest/weekly-contest-512/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 4000,
+        "title": "Largest Integer With Given Digit Sum",
+        "slug": "largest-integer-with-given-digit-sum",
+        "url": "https://leetcode.com/problems/largest-integer-with-given-digit-sum/",
+        "rating": 1199.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 4001,
+        "title": "Aggregate Two Time Series",
+        "slug": "aggregate-two-time-series",
+        "url": "https://leetcode.com/problems/aggregate-two-time-series/",
+        "rating": 1506.3,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 4002,
+        "title": "Count Valid Sequences",
+        "slug": "count-valid-sequences",
+        "url": "https://leetcode.com/problems/count-valid-sequences/",
+        "rating": 1912.3,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 4003,
+        "title": "Minimum Cost Path with Alternating Directions III",
+        "slug": "minimum-cost-path-with-alternating-directions-iii",
+        "url": "https://leetcode.com/problems/minimum-cost-path-with-alternating-directions-iii/",
+        "rating": 2122.9,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 511,
+    "contest_slug": "weekly-contest-511",
+    "contest_name": "Weekly Contest 511",
+    "url": "https://leetcode.com/contest/weekly-contest-511/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3996,
+        "title": "Even Number of Knight Moves",
+        "slug": "even-number-of-knight-moves",
+        "url": "https://leetcode.com/problems/even-number-of-knight-moves/",
+        "rating": 1260.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3997,
+        "title": "Count Dominant Nodes in a Binary Tree",
+        "slug": "count-dominant-nodes-in-a-binary-tree",
+        "url": "https://leetcode.com/problems/count-dominant-nodes-in-a-binary-tree/",
+        "rating": 1426.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3998,
+        "title": "Transform Binary String Using Subsequence Sort",
+        "slug": "transform-binary-string-using-subsequence-sort",
+        "url": "https://leetcode.com/problems/transform-binary-string-using-subsequence-sort/",
+        "rating": 1862.4,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3999,
+        "title": "Minimum Number of String Groups Through Transformations",
+        "slug": "minimum-number-of-string-groups-through-transformations",
+        "url": "https://leetcode.com/problems/minimum-number-of-string-groups-through-transformations/",
+        "rating": 2162.0,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 510,
+    "contest_slug": "weekly-contest-510",
+    "contest_name": "Weekly Contest 510",
+    "url": "https://leetcode.com/contest/weekly-contest-510/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3986,
+        "title": "Number of Elapsed Seconds Between Two Times",
+        "slug": "number-of-elapsed-seconds-between-two-times",
+        "url": "https://leetcode.com/problems/number-of-elapsed-seconds-between-two-times/",
+        "rating": 1205.3,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3987,
+        "title": "Minimum Total Cost to Process All Elements",
+        "slug": "minimum-total-cost-to-process-all-elements",
+        "url": "https://leetcode.com/problems/minimum-total-cost-to-process-all-elements/",
+        "rating": 1549.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3988,
+        "title": "Create Grid With Exactly K Paths I",
+        "slug": "create-grid-with-exactly-k-paths-i",
+        "url": "https://leetcode.com/problems/create-grid-with-exactly-k-paths-i/",
+        "rating": 2054.7,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3989,
+        "title": "Maximum Consistent Columns in a Grid",
+        "slug": "maximum-consistent-columns-in-a-grid",
+        "url": "https://leetcode.com/problems/maximum-consistent-columns-in-a-grid/",
+        "rating": 2013.6,
+        "difficulty": "Medium"
+      }
+    ]
+  },
+  {
+    "contest_number": 509,
+    "contest_slug": "weekly-contest-509",
+    "contest_name": "Weekly Contest 509",
+    "url": "https://leetcode.com/contest/weekly-contest-509/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3982,
+        "title": "Sum of Integers with Maximum Digit Range",
+        "slug": "sum-of-integers-with-maximum-digit-range",
+        "url": "https://leetcode.com/problems/sum-of-integers-with-maximum-digit-range/",
+        "rating": 1200.3,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3983,
+        "title": "Subsequence After One Replacement",
+        "slug": "subsequence-after-one-replacement",
+        "url": "https://leetcode.com/problems/subsequence-after-one-replacement/",
+        "rating": 1754.7,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3984,
+        "title": "Divisible Game",
+        "slug": "divisible-game",
+        "url": "https://leetcode.com/problems/divisible-game/",
+        "rating": 1944.5,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3985,
+        "title": "Palindromic Subarray Sum",
+        "slug": "palindromic-subarray-sum",
+        "url": "https://leetcode.com/problems/palindromic-subarray-sum/",
+        "rating": 2202.0,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 508,
+    "contest_slug": "weekly-contest-508",
+    "contest_name": "Weekly Contest 508",
+    "url": "https://leetcode.com/contest/weekly-contest-508/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3974,
+        "title": "Maximum Total Sum of K Selected Elements",
+        "slug": "maximum-total-sum-of-k-selected-elements",
+        "url": "https://leetcode.com/problems/maximum-total-sum-of-k-selected-elements/",
+        "rating": 1262.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3975,
+        "title": "Filter Occupied Intervals",
+        "slug": "filter-occupied-intervals",
+        "url": "https://leetcode.com/problems/filter-occupied-intervals/",
+        "rating": 1533.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3976,
+        "title": "Maximum Subarray Sum After Multiplier",
+        "slug": "maximum-subarray-sum-after-multiplier",
+        "url": "https://leetcode.com/problems/maximum-subarray-sum-after-multiplier/",
+        "rating": 1981.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3977,
+        "title": "Minimum Time to Reach Target With Limited Power",
+        "slug": "minimum-time-to-reach-target-with-limited-power",
+        "url": "https://leetcode.com/problems/minimum-time-to-reach-target-with-limited-power/",
+        "rating": 2103.0,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 507,
+    "contest_slug": "weekly-contest-507",
+    "contest_name": "Weekly Contest 507",
+    "url": "https://leetcode.com/contest/weekly-contest-507/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3968,
+        "title": "Maximum Manhattan Distance After All Moves",
+        "slug": "maximum-manhattan-distance-after-all-moves",
+        "url": "https://leetcode.com/problems/maximum-manhattan-distance-after-all-moves/",
+        "rating": 1278.7,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3969,
+        "title": "Valid Subarrays With Matching Sum Digits I",
+        "slug": "valid-subarrays-with-matching-sum-digits-i",
+        "url": "https://leetcode.com/problems/valid-subarrays-with-matching-sum-digits-i/",
+        "rating": 1397.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3970,
+        "title": "Shortest Path With At Most K Consecutive Identical Characters",
+        "slug": "shortest-path-with-at-most-k-consecutive-identical-characters",
+        "url": "https://leetcode.com/problems/shortest-path-with-at-most-k-consecutive-identical-characters/",
+        "rating": 1840.2,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3971,
+        "title": "Maximum Total Value",
+        "slug": "maximum-total-value",
+        "url": "https://leetcode.com/problems/maximum-total-value/",
+        "rating": 2194.8,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 506,
+    "contest_slug": "weekly-contest-506",
+    "contest_name": "Weekly Contest 506",
+    "url": "https://leetcode.com/contest/weekly-contest-506/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3959,
+        "title": "Check Good Integer",
+        "slug": "check-good-integer",
+        "url": "https://leetcode.com/problems/check-good-integer/",
+        "rating": 1183.0,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3960,
+        "title": "Frequency Balance Subarray",
+        "slug": "frequency-balance-subarray",
+        "url": "https://leetcode.com/problems/frequency-balance-subarray/",
+        "rating": 1737.2,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3961,
+        "title": "Maximize Sum of Device Ratings",
+        "slug": "maximize-sum-of-device-ratings",
+        "url": "https://leetcode.com/problems/maximize-sum-of-device-ratings/",
+        "rating": 1879.8,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3962,
+        "title": "Maximum Subarray Sum After at Most K Swaps",
+        "slug": "maximum-subarray-sum-after-at-most-k-swaps",
+        "url": "https://leetcode.com/problems/maximum-subarray-sum-after-at-most-k-swaps/",
+        "rating": 2672.4,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 505,
+    "contest_slug": "weekly-contest-505",
+    "contest_name": "Weekly Contest 505",
+    "url": "https://leetcode.com/contest/weekly-contest-505/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3954,
+        "title": "Sum of Compatible Numbers in Range I",
+        "slug": "sum-of-compatible-numbers-in-range-i",
+        "url": "https://leetcode.com/problems/sum-of-compatible-numbers-in-range-i/",
+        "rating": 1210.3,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3955,
+        "title": "Valid Binary Strings With Cost Limit",
+        "slug": "valid-binary-strings-with-cost-limit",
+        "url": "https://leetcode.com/problems/valid-binary-strings-with-cost-limit/",
+        "rating": 1429.0,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3956,
+        "title": "Maximum Sum of M Non-Overlapping Subarrays I",
+        "slug": "maximum-sum-of-m-non-overlapping-subarrays-i",
+        "url": "https://leetcode.com/problems/maximum-sum-of-m-non-overlapping-subarrays-i/",
+        "rating": 2060.7,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3957,
+        "title": "Maximum Sum of M Non-Overlapping Subarrays II",
+        "slug": "maximum-sum-of-m-non-overlapping-subarrays-ii",
+        "url": "https://leetcode.com/problems/maximum-sum-of-m-non-overlapping-subarrays-ii/",
+        "rating": 2611.4,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 504,
+    "contest_slug": "weekly-contest-504",
+    "contest_name": "Weekly Contest 504",
+    "url": "https://leetcode.com/contest/weekly-contest-504/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3945,
+        "title": "Digit Frequency Score",
+        "slug": "digit-frequency-score",
+        "url": "https://leetcode.com/problems/digit-frequency-score/",
+        "rating": 1201.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3946,
+        "title": "Maximum Number of Items From Sale I",
+        "slug": "maximum-number-of-items-from-sale-i",
+        "url": "https://leetcode.com/problems/maximum-number-of-items-from-sale-i/",
+        "rating": 1728.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3947,
+        "title": "Maximum Number of Items From Sale II",
+        "slug": "maximum-number-of-items-from-sale-ii",
+        "url": "https://leetcode.com/problems/maximum-number-of-items-from-sale-ii/",
+        "rating": 2215.5,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3948,
+        "title": "Lexicographically Maximum MEX Array",
+        "slug": "lexicographically-maximum-mex-array",
+        "url": "https://leetcode.com/problems/lexicographically-maximum-mex-array/",
+        "rating": 2122.2,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 503,
+    "contest_slug": "weekly-contest-503",
+    "contest_name": "Weekly Contest 503",
+    "url": "https://leetcode.com/contest/weekly-contest-503/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3940,
+        "title": "Limit Occurrences in Sorted Array",
+        "slug": "limit-occurrences-in-sorted-array",
+        "url": "https://leetcode.com/problems/limit-occurrences-in-sorted-array/",
+        "rating": 1201.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3941,
+        "title": "Password Strength",
+        "slug": "password-strength",
+        "url": "https://leetcode.com/problems/password-strength/",
+        "rating": 1284.3,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3942,
+        "title": "Minimum Operations to Sort a Permutation",
+        "slug": "minimum-operations-to-sort-a-permutation",
+        "url": "https://leetcode.com/problems/minimum-operations-to-sort-a-permutation/",
+        "rating": 1854.9,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3943,
+        "title": "Number of Pairs After Increment",
+        "slug": "number-of-pairs-after-increment",
+        "url": "https://leetcode.com/problems/number-of-pairs-after-increment/",
+        "rating": 2409.9,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 502,
+    "contest_slug": "weekly-contest-502",
+    "contest_name": "Weekly Contest 502",
+    "url": "https://leetcode.com/contest/weekly-contest-502/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3931,
+        "title": "Check Adjacent Digit Differences",
+        "slug": "check-adjacent-digit-differences",
+        "url": "https://leetcode.com/problems/check-adjacent-digit-differences/",
+        "rating": 1165.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3932,
+        "title": "Count K-th Roots in a Range",
+        "slug": "count-k-th-roots-in-a-range",
+        "url": "https://leetcode.com/problems/count-k-th-roots-in-a-range/",
+        "rating": 1548.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3933,
+        "title": "Largest Local Values in a Matrix II",
+        "slug": "largest-local-values-in-a-matrix-ii",
+        "url": "https://leetcode.com/problems/largest-local-values-in-a-matrix-ii/",
+        "rating": 2052.8,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3934,
+        "title": "Smallest Unique Subarray",
+        "slug": "smallest-unique-subarray",
+        "url": "https://leetcode.com/problems/smallest-unique-subarray/",
+        "rating": 2162.5,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 501,
+    "contest_slug": "weekly-contest-501",
+    "contest_name": "Weekly Contest 501",
+    "url": "https://leetcode.com/contest/weekly-contest-501/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3925,
+        "title": "Concatenate Array With Reverse",
+        "slug": "concatenate-array-with-reverse",
+        "url": "https://leetcode.com/problems/concatenate-array-with-reverse/",
+        "rating": 1176.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3926,
+        "title": "Count Valid Word Occurrences",
+        "slug": "count-valid-word-occurrences",
+        "url": "https://leetcode.com/problems/count-valid-word-occurrences/",
+        "rating": 1608.3,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3927,
+        "title": "Minimize Array Sum Using Divisible Replacements",
+        "slug": "minimize-array-sum-using-divisible-replacements",
+        "url": "https://leetcode.com/problems/minimize-array-sum-using-divisible-replacements/",
+        "rating": 1651.6,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3928,
+        "title": "Minimum Cost to Buy Apples II",
+        "slug": "minimum-cost-to-buy-apples-ii",
+        "url": "https://leetcode.com/problems/minimum-cost-to-buy-apples-ii/",
+        "rating": 2186.6,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 500,
+    "contest_slug": "weekly-contest-500",
+    "contest_name": "Weekly Contest 500",
+    "url": "https://leetcode.com/contest/weekly-contest-500/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3917,
+        "title": "Count Indices With Opposite Parity",
+        "slug": "count-indices-with-opposite-parity",
+        "url": "https://leetcode.com/problems/count-indices-with-opposite-parity/",
+        "rating": 1198.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3918,
+        "title": "Sum of Primes Between Number and Its Reverse",
+        "slug": "sum-of-primes-between-number-and-its-reverse",
+        "url": "https://leetcode.com/problems/sum-of-primes-between-number-and-its-reverse/",
+        "rating": 1301.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3919,
+        "title": "Minimum Cost to Move Between Indices",
+        "slug": "minimum-cost-to-move-between-indices",
+        "url": "https://leetcode.com/problems/minimum-cost-to-move-between-indices/",
+        "rating": 1776.8,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3920,
+        "title": "Maximize Fixed Points After Deletions",
+        "slug": "maximize-fixed-points-after-deletions",
+        "url": "https://leetcode.com/problems/maximize-fixed-points-after-deletions/",
+        "rating": 2263.6,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 499,
+    "contest_slug": "weekly-contest-499",
+    "contest_name": "Weekly Contest 499",
+    "url": "https://leetcode.com/contest/weekly-contest-499/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3912,
+        "title": "Valid Elements in an Array",
+        "slug": "valid-elements-in-an-array",
+        "url": "https://leetcode.com/problems/valid-elements-in-an-array/",
+        "rating": 1273.3,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3913,
+        "title": "Sort Vowels by Frequency",
+        "slug": "sort-vowels-by-frequency",
+        "url": "https://leetcode.com/problems/sort-vowels-by-frequency/",
+        "rating": 1524.7,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3914,
+        "title": "Minimum Operations to Make Array Non Decreasing",
+        "slug": "minimum-operations-to-make-array-non-decreasing",
+        "url": "https://leetcode.com/problems/minimum-operations-to-make-array-non-decreasing/",
+        "rating": 1662.1,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3915,
+        "title": "Maximum Sum of Alternating Subsequence With Distance at Least K",
+        "slug": "maximum-sum-of-alternating-subsequence-with-distance-at-least-k",
+        "url": "https://leetcode.com/problems/maximum-sum-of-alternating-subsequence-with-distance-at-least-k/",
+        "rating": 2288.0,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 498,
+    "contest_slug": "weekly-contest-498",
+    "contest_name": "Weekly Contest 498",
+    "url": "https://leetcode.com/contest/weekly-contest-498/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3903,
+        "title": "Smallest Stable Index I",
+        "slug": "smallest-stable-index-i",
+        "url": "https://leetcode.com/problems/smallest-stable-index-i/",
+        "rating": 1234.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3904,
+        "title": "Smallest Stable Index II",
+        "slug": "smallest-stable-index-ii",
+        "url": "https://leetcode.com/problems/smallest-stable-index-ii/",
+        "rating": 1351.7,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3905,
+        "title": "Multi Source Flood Fill",
+        "slug": "multi-source-flood-fill",
+        "url": "https://leetcode.com/problems/multi-source-flood-fill/",
+        "rating": 1671.4,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3906,
+        "title": "Count Good Integers on a Grid Path",
+        "slug": "count-good-integers-on-a-grid-path",
+        "url": "https://leetcode.com/problems/count-good-integers-on-a-grid-path/",
+        "rating": 2160.3,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 497,
+    "contest_slug": "weekly-contest-497",
+    "contest_name": "Weekly Contest 497",
+    "url": "https://leetcode.com/contest/weekly-contest-497/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3898,
+        "title": "Find the Degree of Each Vertex",
+        "slug": "find-the-degree-of-each-vertex",
+        "url": "https://leetcode.com/problems/find-the-degree-of-each-vertex/",
+        "rating": 1202.5,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3899,
+        "title": "Angles of a Triangle",
+        "slug": "angles-of-a-triangle",
+        "url": "https://leetcode.com/problems/angles-of-a-triangle/",
+        "rating": 1407.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3900,
+        "title": "Longest Balanced Substring After One Swap",
+        "slug": "longest-balanced-substring-after-one-swap",
+        "url": "https://leetcode.com/problems/longest-balanced-substring-after-one-swap/",
+        "rating": 2135.0,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3901,
+        "title": "Good Subsequence Queries",
+        "slug": "good-subsequence-queries",
+        "url": "https://leetcode.com/problems/good-subsequence-queries/",
+        "rating": 2544.8,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 496,
+    "contest_slug": "weekly-contest-496",
+    "contest_name": "Weekly Contest 496",
+    "url": "https://leetcode.com/contest/weekly-contest-496/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3889,
+        "title": "Mirror Frequency Distance",
+        "slug": "mirror-frequency-distance",
+        "url": "https://leetcode.com/problems/mirror-frequency-distance/",
+        "rating": 1312.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3890,
+        "title": "Integers With Multiple Sum of Two Cubes",
+        "slug": "integers-with-multiple-sum-of-two-cubes",
+        "url": "https://leetcode.com/problems/integers-with-multiple-sum-of-two-cubes/",
+        "rating": 1534.4,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3891,
+        "title": "Minimum Increase to Maximize Special Indices",
+        "slug": "minimum-increase-to-maximize-special-indices",
+        "url": "https://leetcode.com/problems/minimum-increase-to-maximize-special-indices/",
+        "rating": 1952.8,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3892,
+        "title": "Minimum Operations to Achieve At Least K Peaks",
+        "slug": "minimum-operations-to-achieve-at-least-k-peaks",
+        "url": "https://leetcode.com/problems/minimum-operations-to-achieve-at-least-k-peaks/",
+        "rating": 2280.4,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 495,
+    "contest_slug": "weekly-contest-495",
+    "contest_name": "Weekly Contest 495",
+    "url": "https://leetcode.com/contest/weekly-contest-495/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3884,
+        "title": "First Matching Character From Both Ends",
+        "slug": "first-matching-character-from-both-ends",
+        "url": "https://leetcode.com/problems/first-matching-character-from-both-ends/",
+        "rating": 1161.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3885,
+        "title": "Design Event Manager",
+        "slug": "design-event-manager",
+        "url": "https://leetcode.com/problems/design-event-manager/",
+        "rating": 1548.0,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3886,
+        "title": "Sum of Sortable Integers",
+        "slug": "sum-of-sortable-integers",
+        "url": "https://leetcode.com/problems/sum-of-sortable-integers/",
+        "rating": 1999.3,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3887,
+        "title": "Incremental Even-Weighted Cycle Queries",
+        "slug": "incremental-even-weighted-cycle-queries",
+        "url": "https://leetcode.com/problems/incremental-even-weighted-cycle-queries/",
+        "rating": 2128.3,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 494,
+    "contest_slug": "weekly-contest-494",
+    "contest_name": "Weekly Contest 494",
+    "url": "https://leetcode.com/contest/weekly-contest-494/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3875,
+        "title": "Construct Uniform Parity Array I",
+        "slug": "construct-uniform-parity-array-i",
+        "url": "https://leetcode.com/problems/construct-uniform-parity-array-i/",
+        "rating": 1199.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3876,
+        "title": "Construct Uniform Parity Array II",
+        "slug": "construct-uniform-parity-array-ii",
+        "url": "https://leetcode.com/problems/construct-uniform-parity-array-ii/",
+        "rating": 1443.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3877,
+        "title": "Minimum Removals to Achieve Target XOR",
+        "slug": "minimum-removals-to-achieve-target-xor",
+        "url": "https://leetcode.com/problems/minimum-removals-to-achieve-target-xor/",
+        "rating": 1745.1,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3878,
+        "title": "Count Good Subarrays",
+        "slug": "count-good-subarrays",
+        "url": "https://leetcode.com/problems/count-good-subarrays/",
+        "rating": 2230.1,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 493,
+    "contest_slug": "weekly-contest-493",
+    "contest_name": "Weekly Contest 493",
+    "url": "https://leetcode.com/contest/weekly-contest-493/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3870,
+        "title": "Count Commas in Range",
+        "slug": "count-commas-in-range",
+        "url": "https://leetcode.com/problems/count-commas-in-range/",
+        "rating": 1149.5,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3871,
+        "title": "Count Commas in Range II",
+        "slug": "count-commas-in-range-ii",
+        "url": "https://leetcode.com/problems/count-commas-in-range-ii/",
+        "rating": 1380.5,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3872,
+        "title": "Longest Arithmetic Sequence After Changing At Most One Element",
+        "slug": "longest-arithmetic-sequence-after-changing-at-most-one-element",
+        "url": "https://leetcode.com/problems/longest-arithmetic-sequence-after-changing-at-most-one-element/",
+        "rating": 2042.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3873,
+        "title": "Maximum Points Activated with One Addition",
+        "slug": "maximum-points-activated-with-one-addition",
+        "url": "https://leetcode.com/problems/maximum-points-activated-with-one-addition/",
+        "rating": 2198.1,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 492,
+    "contest_slug": "weekly-contest-492",
+    "contest_name": "Weekly Contest 492",
+    "url": "https://leetcode.com/contest/weekly-contest-492/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3861,
+        "title": "Minimum Capacity Box",
+        "slug": "minimum-capacity-box",
+        "url": "https://leetcode.com/problems/minimum-capacity-box/",
+        "rating": 1154.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3862,
+        "title": "Find the Smallest Balanced Index",
+        "slug": "find-the-smallest-balanced-index",
+        "url": "https://leetcode.com/problems/find-the-smallest-balanced-index/",
+        "rating": 1697.5,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3863,
+        "title": "Minimum Operations to Sort a String",
+        "slug": "minimum-operations-to-sort-a-string",
+        "url": "https://leetcode.com/problems/minimum-operations-to-sort-a-string/",
+        "rating": 1860.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3864,
+        "title": "Minimum Cost to Partition a Binary String",
+        "slug": "minimum-cost-to-partition-a-binary-string",
+        "url": "https://leetcode.com/problems/minimum-cost-to-partition-a-binary-string/",
+        "rating": 2032.5,
+        "difficulty": "Medium"
+      }
+    ]
+  },
+  {
+    "contest_number": 491,
+    "contest_slug": "weekly-contest-491",
+    "contest_name": "Weekly Contest 491",
+    "url": "https://leetcode.com/contest/weekly-contest-491/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3856,
+        "title": "Trim Trailing Vowels",
+        "slug": "trim-trailing-vowels",
+        "url": "https://leetcode.com/problems/trim-trailing-vowels/",
+        "rating": 1139.5,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3857,
+        "title": "Minimum Cost to Split into Ones",
+        "slug": "minimum-cost-to-split-into-ones",
+        "url": "https://leetcode.com/problems/minimum-cost-to-split-into-ones/",
+        "rating": 1322.4,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3858,
+        "title": "Minimum Bitwise OR From Grid",
+        "slug": "minimum-bitwise-or-from-grid",
+        "url": "https://leetcode.com/problems/minimum-bitwise-or-from-grid/",
+        "rating": 1947.4,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3859,
+        "title": "Count Subarrays With K Distinct Integers",
+        "slug": "count-subarrays-with-k-distinct-integers",
+        "url": "https://leetcode.com/problems/count-subarrays-with-k-distinct-integers/",
+        "rating": 2302.3,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 490,
+    "contest_slug": "weekly-contest-490",
+    "contest_name": "Weekly Contest 490",
+    "url": "https://leetcode.com/contest/weekly-contest-490/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3847,
+        "title": "Find the Score Difference in a Game",
+        "slug": "find-the-score-difference-in-a-game",
+        "url": "https://leetcode.com/problems/find-the-score-difference-in-a-game/",
+        "rating": 1223.5,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3848,
+        "title": "Check Digitorial Permutation",
+        "slug": "check-digitorial-permutation",
+        "url": "https://leetcode.com/problems/check-digitorial-permutation/",
+        "rating": 1420.0,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3849,
+        "title": "Maximum Bitwise XOR After Rearrangement",
+        "slug": "maximum-bitwise-xor-after-rearrangement",
+        "url": "https://leetcode.com/problems/maximum-bitwise-xor-after-rearrangement/",
+        "rating": 1556.4,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3850,
+        "title": "Count Sequences to K",
+        "slug": "count-sequences-to-k",
+        "url": "https://leetcode.com/problems/count-sequences-to-k/",
+        "rating": 1964.6,
+        "difficulty": "Medium"
+      }
+    ]
+  },
+  {
+    "contest_number": 489,
+    "contest_slug": "weekly-contest-489",
+    "contest_name": "Weekly Contest 489",
+    "url": "https://leetcode.com/contest/weekly-contest-489/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3842,
+        "title": "Toggle Light Bulbs",
+        "slug": "toggle-light-bulbs",
+        "url": "https://leetcode.com/problems/toggle-light-bulbs/",
+        "rating": 1161.0,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3843,
+        "title": "First Element with Unique Frequency",
+        "slug": "first-element-with-unique-frequency",
+        "url": "https://leetcode.com/problems/first-element-with-unique-frequency/",
+        "rating": 1347.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3844,
+        "title": "Longest Almost-Palindromic Substring",
+        "slug": "longest-almost-palindromic-substring",
+        "url": "https://leetcode.com/problems/longest-almost-palindromic-substring/",
+        "rating": 1989.6,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3845,
+        "title": "Maximum Subarray XOR with Bounded Range",
+        "slug": "maximum-subarray-xor-with-bounded-range",
+        "url": "https://leetcode.com/problems/maximum-subarray-xor-with-bounded-range/",
+        "rating": 2347.4,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 488,
+    "contest_slug": "weekly-contest-488",
+    "contest_name": "Weekly Contest 488",
+    "url": "https://leetcode.com/contest/weekly-contest-488/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3833,
+        "title": "Count Dominant Indices",
+        "slug": "count-dominant-indices",
+        "url": "https://leetcode.com/problems/count-dominant-indices/",
+        "rating": 1171.7,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3834,
+        "title": "Merge Adjacent Equal Elements",
+        "slug": "merge-adjacent-equal-elements",
+        "url": "https://leetcode.com/problems/merge-adjacent-equal-elements/",
+        "rating": 1428.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3835,
+        "title": "Count Subarrays With Cost Less Than or Equal to K",
+        "slug": "count-subarrays-with-cost-less-than-or-equal-to-k",
+        "url": "https://leetcode.com/problems/count-subarrays-with-cost-less-than-or-equal-to-k/",
+        "rating": 1759.1,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3836,
+        "title": "Maximum Score Using Exactly K Pairs",
+        "slug": "maximum-score-using-exactly-k-pairs",
+        "url": "https://leetcode.com/problems/maximum-score-using-exactly-k-pairs/",
+        "rating": 1988.0,
+        "difficulty": "Medium"
+      }
+    ]
+  },
+  {
+    "contest_number": 487,
+    "contest_slug": "weekly-contest-487",
+    "contest_name": "Weekly Contest 487",
+    "url": "https://leetcode.com/contest/weekly-contest-487/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3827,
+        "title": "Count Monobit Integers",
+        "slug": "count-monobit-integers",
+        "url": "https://leetcode.com/problems/count-monobit-integers/",
+        "rating": 1190.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3828,
+        "title": "Final Element After Subarray Deletions",
+        "slug": "final-element-after-subarray-deletions",
+        "url": "https://leetcode.com/problems/final-element-after-subarray-deletions/",
+        "rating": 1591.2,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3829,
+        "title": "Design Ride Sharing System",
+        "slug": "design-ride-sharing-system",
+        "url": "https://leetcode.com/problems/design-ride-sharing-system/",
+        "rating": 1594.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3830,
+        "title": "Longest Alternating Subarray After Removing At Most One Element",
+        "slug": "longest-alternating-subarray-after-removing-at-most-one-element",
+        "url": "https://leetcode.com/problems/longest-alternating-subarray-after-removing-at-most-one-element/",
+        "rating": 2162.1,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 486,
+    "contest_slug": "weekly-contest-486",
+    "contest_name": "Weekly Contest 486",
+    "url": "https://leetcode.com/contest/weekly-contest-486/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3818,
+        "title": "Minimum Prefix Removal to Make Array Strictly Increasing",
+        "slug": "minimum-prefix-removal-to-make-array-strictly-increasing",
+        "url": "https://leetcode.com/problems/minimum-prefix-removal-to-make-array-strictly-increasing/",
+        "rating": 1206.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3819,
+        "title": "Rotate Non Negative Elements",
+        "slug": "rotate-non-negative-elements",
+        "url": "https://leetcode.com/problems/rotate-non-negative-elements/",
+        "rating": 1381.4,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3820,
+        "title": "Pythagorean Distance Nodes in a Tree",
+        "slug": "pythagorean-distance-nodes-in-a-tree",
+        "url": "https://leetcode.com/problems/pythagorean-distance-nodes-in-a-tree/",
+        "rating": 1725.3,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3821,
+        "title": "Find Nth Smallest Integer With K One Bits",
+        "slug": "find-nth-smallest-integer-with-k-one-bits",
+        "url": "https://leetcode.com/problems/find-nth-smallest-integer-with-k-one-bits/",
+        "rating": 2069.2,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 485,
+    "contest_slug": "weekly-contest-485",
+    "contest_name": "Weekly Contest 485",
+    "url": "https://leetcode.com/contest/weekly-contest-485/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3813,
+        "title": "Vowel-Consonant Score",
+        "slug": "vowel-consonant-score",
+        "url": "https://leetcode.com/problems/vowel-consonant-score/",
+        "rating": 1216.4,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3814,
+        "title": "Maximum Capacity Within Budget",
+        "slug": "maximum-capacity-within-budget",
+        "url": "https://leetcode.com/problems/maximum-capacity-within-budget/",
+        "rating": 1796.1,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3815,
+        "title": "Design Auction System",
+        "slug": "design-auction-system",
+        "url": "https://leetcode.com/problems/design-auction-system/",
+        "rating": 1853.8,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3816,
+        "title": "Lexicographically Smallest String After Deleting Duplicate Characters",
+        "slug": "lexicographically-smallest-string-after-deleting-duplicate-characters",
+        "url": "https://leetcode.com/problems/lexicographically-smallest-string-after-deleting-duplicate-characters/",
+        "rating": 2376.6,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 484,
+    "contest_slug": "weekly-contest-484",
+    "contest_name": "Weekly Contest 484",
+    "url": "https://leetcode.com/contest/weekly-contest-484/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3803,
+        "title": "Count Residue Prefixes",
+        "slug": "count-residue-prefixes",
+        "url": "https://leetcode.com/problems/count-residue-prefixes/",
+        "rating": 1248.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3804,
+        "title": "Number of Centered Subarrays",
+        "slug": "number-of-centered-subarrays",
+        "url": "https://leetcode.com/problems/number-of-centered-subarrays/",
+        "rating": 1393.3,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3805,
+        "title": "Count Caesar Cipher Pairs",
+        "slug": "count-caesar-cipher-pairs",
+        "url": "https://leetcode.com/problems/count-caesar-cipher-pairs/",
+        "rating": 1624.3,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3806,
+        "title": "Maximum Bitwise AND After Increment Operations",
+        "slug": "maximum-bitwise-and-after-increment-operations",
+        "url": "https://leetcode.com/problems/maximum-bitwise-and-after-increment-operations/",
+        "rating": 2259.2,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 483,
+    "contest_slug": "weekly-contest-483",
+    "contest_name": "Weekly Contest 483",
+    "url": "https://leetcode.com/contest/weekly-contest-483/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3798,
+        "title": "Largest Even Number",
+        "slug": "largest-even-number",
+        "url": "https://leetcode.com/problems/largest-even-number/",
+        "rating": 1365.0,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3799,
+        "title": "Word Squares II",
+        "slug": "word-squares-ii",
+        "url": "https://leetcode.com/problems/word-squares-ii/",
+        "rating": 1606.1,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3800,
+        "title": "Minimum Cost to Make Two Binary Strings Equal",
+        "slug": "minimum-cost-to-make-two-binary-strings-equal",
+        "url": "https://leetcode.com/problems/minimum-cost-to-make-two-binary-strings-equal/",
+        "rating": 1841.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3801,
+        "title": "Minimum Cost to Merge Sorted Lists",
+        "slug": "minimum-cost-to-merge-sorted-lists",
+        "url": "https://leetcode.com/problems/minimum-cost-to-merge-sorted-lists/",
+        "rating": 2398.6,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 482,
+    "contest_slug": "weekly-contest-482",
+    "contest_name": "Weekly Contest 482",
+    "url": "https://leetcode.com/contest/weekly-contest-482/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3788,
+        "title": "Maximum Score of a Split",
+        "slug": "maximum-score-of-a-split",
+        "url": "https://leetcode.com/problems/maximum-score-of-a-split/",
+        "rating": 1306.4,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3789,
+        "title": "Minimum Cost to Acquire Required Items",
+        "slug": "minimum-cost-to-acquire-required-items",
+        "url": "https://leetcode.com/problems/minimum-cost-to-acquire-required-items/",
+        "rating": 1579.7,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3790,
+        "title": "Smallest All-Ones Multiple",
+        "slug": "smallest-all-ones-multiple",
+        "url": "https://leetcode.com/problems/smallest-all-ones-multiple/",
+        "rating": 1593.2,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3791,
+        "title": "Number of Balanced Integers in a Range",
+        "slug": "number-of-balanced-integers-in-a-range",
+        "url": "https://leetcode.com/problems/number-of-balanced-integers-in-a-range/",
+        "rating": 2132.2,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 481,
+    "contest_slug": "weekly-contest-481",
+    "contest_name": "Weekly Contest 481",
+    "url": "https://leetcode.com/contest/weekly-contest-481/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3783,
+        "title": "Mirror Distance of an Integer",
+        "slug": "mirror-distance-of-an-integer",
+        "url": "https://leetcode.com/problems/mirror-distance-of-an-integer/",
+        "rating": 1170.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3784,
+        "title": "Minimum Deletion Cost to Make All Characters Equal",
+        "slug": "minimum-deletion-cost-to-make-all-characters-equal",
+        "url": "https://leetcode.com/problems/minimum-deletion-cost-to-make-all-characters-equal/",
+        "rating": 1387.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3785,
+        "title": "Minimum Swaps to Avoid Forbidden Values",
+        "slug": "minimum-swaps-to-avoid-forbidden-values",
+        "url": "https://leetcode.com/problems/minimum-swaps-to-avoid-forbidden-values/",
+        "rating": 2051.5,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3786,
+        "title": "Total Sum of Interaction Cost in Tree Groups",
+        "slug": "total-sum-of-interaction-cost-in-tree-groups",
+        "url": "https://leetcode.com/problems/total-sum-of-interaction-cost-in-tree-groups/",
+        "rating": 2139.3,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 480,
+    "contest_slug": "weekly-contest-480",
+    "contest_name": "Weekly Contest 480",
+    "url": "https://leetcode.com/contest/weekly-contest-480/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3774,
+        "title": "Absolute Difference Between Maximum and Minimum K Elements",
+        "slug": "absolute-difference-between-maximum-and-minimum-k-elements",
+        "url": "https://leetcode.com/problems/absolute-difference-between-maximum-and-minimum-k-elements/",
+        "rating": 1206.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3775,
+        "title": "Reverse Words With Same Vowel Count",
+        "slug": "reverse-words-with-same-vowel-count",
+        "url": "https://leetcode.com/problems/reverse-words-with-same-vowel-count/",
+        "rating": 1392.0,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3776,
+        "title": "Minimum Moves to Balance Circular Array",
+        "slug": "minimum-moves-to-balance-circular-array",
+        "url": "https://leetcode.com/problems/minimum-moves-to-balance-circular-array/",
+        "rating": 1739.8,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3777,
+        "title": "Minimum Deletions to Make Alternating Substring",
+        "slug": "minimum-deletions-to-make-alternating-substring",
+        "url": "https://leetcode.com/problems/minimum-deletions-to-make-alternating-substring/",
+        "rating": 2201.7,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 479,
+    "contest_slug": "weekly-contest-479",
+    "contest_name": "Weekly Contest 479",
+    "url": "https://leetcode.com/contest/weekly-contest-479/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3769,
+        "title": "Sort Integers by Binary Reflection",
+        "slug": "sort-integers-by-binary-reflection",
+        "url": "https://leetcode.com/problems/sort-integers-by-binary-reflection/",
+        "rating": 1363.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3770,
+        "title": "Largest Prime from Consecutive Prime Sum",
+        "slug": "largest-prime-from-consecutive-prime-sum",
+        "url": "https://leetcode.com/problems/largest-prime-from-consecutive-prime-sum/",
+        "rating": 1546.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3771,
+        "title": "Total Score of Dungeon Runs",
+        "slug": "total-score-of-dungeon-runs",
+        "url": "https://leetcode.com/problems/total-score-of-dungeon-runs/",
+        "rating": 1981.4,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3772,
+        "title": "Maximum Subgraph Score in a Tree",
+        "slug": "maximum-subgraph-score-in-a-tree",
+        "url": "https://leetcode.com/problems/maximum-subgraph-score-in-a-tree/",
+        "rating": 2234.9,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 478,
+    "contest_slug": "weekly-contest-478",
+    "contest_name": "Weekly Contest 478",
+    "url": "https://leetcode.com/contest/weekly-contest-478/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3759,
+        "title": "Count Elements With at Least K Greater Values",
+        "slug": "count-elements-with-at-least-k-greater-values",
+        "url": "https://leetcode.com/problems/count-elements-with-at-least-k-greater-values/",
+        "rating": 1372.7,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3760,
+        "title": "Maximum Substrings With Distinct Start",
+        "slug": "maximum-substrings-with-distinct-start",
+        "url": "https://leetcode.com/problems/maximum-substrings-with-distinct-start/",
+        "rating": 1364.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3761,
+        "title": "Minimum Absolute Distance Between Mirror Pairs",
+        "slug": "minimum-absolute-distance-between-mirror-pairs",
+        "url": "https://leetcode.com/problems/minimum-absolute-distance-between-mirror-pairs/",
+        "rating": 1669.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3762,
+        "title": "Minimum Operations to Equalize Subarrays",
+        "slug": "minimum-operations-to-equalize-subarrays",
+        "url": "https://leetcode.com/problems/minimum-operations-to-equalize-subarrays/",
+        "rating": 2497.2,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 477,
+    "contest_slug": "weekly-contest-477",
+    "contest_name": "Weekly Contest 477",
+    "url": "https://leetcode.com/contest/weekly-contest-477/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3754,
+        "title": "Concatenate Non-Zero Digits and Multiply by Sum I",
+        "slug": "concatenate-non-zero-digits-and-multiply-by-sum-i",
+        "url": "https://leetcode.com/problems/concatenate-non-zero-digits-and-multiply-by-sum-i/",
+        "rating": 1247.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3755,
+        "title": "Find Maximum Balanced XOR Subarray Length",
+        "slug": "find-maximum-balanced-xor-subarray-length",
+        "url": "https://leetcode.com/problems/find-maximum-balanced-xor-subarray-length/",
+        "rating": 1663.4,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3756,
+        "title": "Concatenate Non-Zero Digits and Multiply by Sum II",
+        "slug": "concatenate-non-zero-digits-and-multiply-by-sum-ii",
+        "url": "https://leetcode.com/problems/concatenate-non-zero-digits-and-multiply-by-sum-ii/",
+        "rating": 1968.5,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3757,
+        "title": "Number of Effective Subsequences",
+        "slug": "number-of-effective-subsequences",
+        "url": "https://leetcode.com/problems/number-of-effective-subsequences/",
+        "rating": 2519.5,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 476,
+    "contest_slug": "weekly-contest-476",
+    "contest_name": "Weekly Contest 476",
+    "url": "https://leetcode.com/contest/weekly-contest-476/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3745,
+        "title": "Maximize Expression of Three Elements",
+        "slug": "maximize-expression-of-three-elements",
+        "url": "https://leetcode.com/problems/maximize-expression-of-three-elements/",
+        "rating": 1218.4,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3746,
+        "title": "Minimum String Length After Balanced Removals",
+        "slug": "minimum-string-length-after-balanced-removals",
+        "url": "https://leetcode.com/problems/minimum-string-length-after-balanced-removals/",
+        "rating": 1326.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3747,
+        "title": "Count Distinct Integers After Removing Zeros",
+        "slug": "count-distinct-integers-after-removing-zeros",
+        "url": "https://leetcode.com/problems/count-distinct-integers-after-removing-zeros/",
+        "rating": 1848.2,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3748,
+        "title": "Count Stable Subarrays",
+        "slug": "count-stable-subarrays",
+        "url": "https://leetcode.com/problems/count-stable-subarrays/",
+        "rating": 2209.1,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 475,
+    "contest_slug": "weekly-contest-475",
+    "contest_name": "Weekly Contest 475",
+    "url": "https://leetcode.com/contest/weekly-contest-475/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3740,
+        "title": "Minimum Distance Between Three Equal Elements I",
+        "slug": "minimum-distance-between-three-equal-elements-i",
+        "url": "https://leetcode.com/problems/minimum-distance-between-three-equal-elements-i/",
+        "rating": 1287.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3741,
+        "title": "Minimum Distance Between Three Equal Elements II",
+        "slug": "minimum-distance-between-three-equal-elements-ii",
+        "url": "https://leetcode.com/problems/minimum-distance-between-three-equal-elements-ii/",
+        "rating": 1449.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3742,
+        "title": "Maximum Path Score in a Grid",
+        "slug": "maximum-path-score-in-a-grid",
+        "url": "https://leetcode.com/problems/maximum-path-score-in-a-grid/",
+        "rating": 1804.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3743,
+        "title": "Maximize Cyclic Partition Score",
+        "slug": "maximize-cyclic-partition-score",
+        "url": "https://leetcode.com/problems/maximize-cyclic-partition-score/",
+        "rating": 3124.5,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 474,
+    "contest_slug": "weekly-contest-474",
+    "contest_name": "Weekly Contest 474",
+    "url": "https://leetcode.com/contest/weekly-contest-474/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3731,
+        "title": "Find Missing Elements",
+        "slug": "find-missing-elements",
+        "url": "https://leetcode.com/problems/find-missing-elements/",
+        "rating": 1217.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3732,
+        "title": "Maximum Product of Three Elements After One Replacement",
+        "slug": "maximum-product-of-three-elements-after-one-replacement",
+        "url": "https://leetcode.com/problems/maximum-product-of-three-elements-after-one-replacement/",
+        "rating": 1529.1,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3733,
+        "title": "Minimum Time to Complete All Deliveries",
+        "slug": "minimum-time-to-complete-all-deliveries",
+        "url": "https://leetcode.com/problems/minimum-time-to-complete-all-deliveries/",
+        "rating": 1972.8,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3734,
+        "title": "Lexicographically Smallest Palindromic Permutation Greater Than Target",
+        "slug": "lexicographically-smallest-palindromic-permutation-greater-than-target",
+        "url": "https://leetcode.com/problems/lexicographically-smallest-palindromic-permutation-greater-than-target/",
+        "rating": 2330.0,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 473,
+    "contest_slug": "weekly-contest-473",
+    "contest_name": "Weekly Contest 473",
+    "url": "https://leetcode.com/contest/weekly-contest-473/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3726,
+        "title": "Remove Zeros in Decimal Representation",
+        "slug": "remove-zeros-in-decimal-representation",
+        "url": "https://leetcode.com/problems/remove-zeros-in-decimal-representation/",
+        "rating": 1175.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3727,
+        "title": "Maximum Alternating Sum of Squares",
+        "slug": "maximum-alternating-sum-of-squares",
+        "url": "https://leetcode.com/problems/maximum-alternating-sum-of-squares/",
+        "rating": 1454.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3728,
+        "title": "Stable Subarrays With Equal Boundary and Interior Sum",
+        "slug": "stable-subarrays-with-equal-boundary-and-interior-sum",
+        "url": "https://leetcode.com/problems/stable-subarrays-with-equal-boundary-and-interior-sum/",
+        "rating": 1908.9,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3729,
+        "title": "Count Distinct Subarrays Divisible by K in Sorted Array",
+        "slug": "count-distinct-subarrays-divisible-by-k-in-sorted-array",
+        "url": "https://leetcode.com/problems/count-distinct-subarrays-divisible-by-k-in-sorted-array/",
+        "rating": 2248.0,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 472,
+    "contest_slug": "weekly-contest-472",
+    "contest_name": "Weekly Contest 472",
+    "url": "https://leetcode.com/contest/weekly-contest-472/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3718,
+        "title": "Smallest Missing Multiple of K",
+        "slug": "smallest-missing-multiple-of-k",
+        "url": "https://leetcode.com/problems/smallest-missing-multiple-of-k/",
+        "rating": 1227.6,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3719,
+        "title": "Longest Balanced Subarray I",
+        "slug": "longest-balanced-subarray-i",
+        "url": "https://leetcode.com/problems/longest-balanced-subarray-i/",
+        "rating": 1467.0,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3720,
+        "title": "Lexicographically Smallest Permutation Greater Than Target",
+        "slug": "lexicographically-smallest-permutation-greater-than-target",
+        "url": "https://leetcode.com/problems/lexicographically-smallest-permutation-greater-than-target/",
+        "rating": 1958.1,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3721,
+        "title": "Longest Balanced Subarray II",
+        "slug": "longest-balanced-subarray-ii",
+        "url": "https://leetcode.com/problems/longest-balanced-subarray-ii/",
+        "rating": 2723.5,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 471,
+    "contest_slug": "weekly-contest-471",
+    "contest_name": "Weekly Contest 471",
+    "url": "https://leetcode.com/contest/weekly-contest-471/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3712,
+        "title": "Sum of Elements With Frequency Divisible by K",
+        "slug": "sum-of-elements-with-frequency-divisible-by-k",
+        "url": "https://leetcode.com/problems/sum-of-elements-with-frequency-divisible-by-k/",
+        "rating": 1198.7,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3713,
+        "title": "Longest Balanced Substring I",
+        "slug": "longest-balanced-substring-i",
+        "url": "https://leetcode.com/problems/longest-balanced-substring-i/",
+        "rating": 1490.2,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3714,
+        "title": "Longest Balanced Substring II",
+        "slug": "longest-balanced-substring-ii",
+        "url": "https://leetcode.com/problems/longest-balanced-substring-ii/",
+        "rating": 2201.8,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3715,
+        "title": "Sum of Perfect Square Ancestors",
+        "slug": "sum-of-perfect-square-ancestors",
+        "url": "https://leetcode.com/problems/sum-of-perfect-square-ancestors/",
+        "rating": 2235.4,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 470,
+    "contest_slug": "weekly-contest-470",
+    "contest_name": "Weekly Contest 470",
+    "url": "https://leetcode.com/contest/weekly-contest-470/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3701,
+        "title": "Compute Alternating Sum",
+        "slug": "compute-alternating-sum",
+        "url": "https://leetcode.com/problems/compute-alternating-sum/",
+        "rating": 1228.3,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3702,
+        "title": "Longest Subsequence With Non-Zero Bitwise XOR",
+        "slug": "longest-subsequence-with-non-zero-bitwise-xor",
+        "url": "https://leetcode.com/problems/longest-subsequence-with-non-zero-bitwise-xor/",
+        "rating": 1489.5,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3703,
+        "title": "Remove K-Balanced Substrings",
+        "slug": "remove-k-balanced-substrings",
+        "url": "https://leetcode.com/problems/remove-k-balanced-substrings/",
+        "rating": 1802.0,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3704,
+        "title": "Count No-Zero Pairs That Sum to N",
+        "slug": "count-no-zero-pairs-that-sum-to-n",
+        "url": "https://leetcode.com/problems/count-no-zero-pairs-that-sum-to-n/",
+        "rating": 2419.3,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 469,
+    "contest_slug": "weekly-contest-469",
+    "contest_name": "Weekly Contest 469",
+    "url": "https://leetcode.com/contest/weekly-contest-469/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3697,
+        "title": "Compute Decimal Representation",
+        "slug": "compute-decimal-representation",
+        "url": "https://leetcode.com/problems/compute-decimal-representation/",
+        "rating": 1250.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3698,
+        "title": "Split Array With Minimum Difference",
+        "slug": "split-array-with-minimum-difference",
+        "url": "https://leetcode.com/problems/split-array-with-minimum-difference/",
+        "rating": 1648.8,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q3",
+        "id": 3699,
+        "title": "Number of ZigZag Arrays I",
+        "slug": "number-of-zigzag-arrays-i",
+        "url": "https://leetcode.com/problems/number-of-zigzag-arrays-i/",
+        "rating": 2123.1,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3700,
+        "title": "Number of ZigZag Arrays II",
+        "slug": "number-of-zigzag-arrays-ii",
+        "url": "https://leetcode.com/problems/number-of-zigzag-arrays-ii/",
+        "rating": 2435.1,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 468,
+    "contest_slug": "weekly-contest-468",
+    "contest_name": "Weekly Contest 468",
+    "url": "https://leetcode.com/contest/weekly-contest-468/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3688,
+        "title": "Bitwise OR of Even Numbers in an Array",
+        "slug": "bitwise-or-of-even-numbers-in-an-array",
+        "url": "https://leetcode.com/problems/bitwise-or-of-even-numbers-in-an-array/",
+        "rating": 1204.9,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3689,
+        "title": "Maximum Total Subarray Value I",
+        "slug": "maximum-total-subarray-value-i",
+        "url": "https://leetcode.com/problems/maximum-total-subarray-value-i/",
+        "rating": 1370.7,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3690,
+        "title": "Split and Merge Array Transformation",
+        "slug": "split-and-merge-array-transformation",
+        "url": "https://leetcode.com/problems/split-and-merge-array-transformation/",
+        "rating": 1982.5,
+        "difficulty": "Medium"
+      },
+      {
+        "index": "Q4",
+        "id": 3691,
+        "title": "Maximum Total Subarray Value II",
+        "slug": "maximum-total-subarray-value-ii",
+        "url": "https://leetcode.com/problems/maximum-total-subarray-value-ii/",
+        "rating": 2469.0,
+        "difficulty": "Hard"
+      }
+    ]
+  },
+  {
+    "contest_number": 467,
+    "contest_slug": "weekly-contest-467",
+    "contest_name": "Weekly Contest 467",
+    "url": "https://leetcode.com/contest/weekly-contest-467/",
+    "problems": [
+      {
+        "index": "Q1",
+        "id": 3683,
+        "title": "Earliest Time to Finish One Task",
+        "slug": "earliest-time-to-finish-one-task",
+        "url": "https://leetcode.com/problems/earliest-time-to-finish-one-task/",
+        "rating": 1198.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q2",
+        "id": 3684,
+        "title": "Maximize Sum of At Most K Distinct Elements",
+        "slug": "maximize-sum-of-at-most-k-distinct-elements",
+        "url": "https://leetcode.com/problems/maximize-sum-of-at-most-k-distinct-elements/",
+        "rating": 1298.8,
+        "difficulty": "Easy"
+      },
+      {
+        "index": "Q3",
+        "id": 3685,
+        "title": "Subsequence Sum After Capping Elements",
+        "slug": "subsequence-sum-after-capping-elements",
+        "url": "https://leetcode.com/problems/subsequence-sum-after-capping-elements/",
+        "rating": 2073.4,
+        "difficulty": "Hard"
+      },
+      {
+        "index": "Q4",
+        "id": 3686,
+        "title": "Number of Stable Subsequences",
+        "slug": "number-of-stable-subsequences",
+        "url": "https://leetcode.com/problems/number-of-stable-subsequences/",
+        "rating": 1969.3,
+        "difficulty": "Medium"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep Engine — Sprint Cockpit & DSA Greedy Module</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d10;
+      --surface-1: #11171d;
+      --surface-2: #182028;
+      --surface-3: #202b35;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.15);
+      
+      --text: #f1f5f9;
+      --text-muted: #8b9bb0;
+      --text-dim: #54657a;
+      
+      --accent: #0ea5e9;
+      --accent-glow: rgba(14, 165, 233, 0.15);
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.15);
+      --amber: #f59e0b;
+      --amber-glow: rgba(245, 158, 11, 0.15);
+      --rose: #f43f5e;
+      --rose-glow: rgba(244, 63, 94, 0.15);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .app-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    /* Header */
+    header.top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand-title h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-title .badge-sprint {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: var(--surface-3);
+      color: var(--accent);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      font-weight: 500;
+    }
+
+    .brand-title p {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .status-chip {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 10px var(--emerald);
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--surface-1);
+      padding: 6px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      margin-bottom: 28px;
+      overflow-x: auto;
+    }
+
+    .nav-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+    }
+
+    .nav-tab:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-tab.active {
+      background: var(--surface-3);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-strong);
+    }
+
+    .nav-tab .tab-badge {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      padding: 2px 6px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Metric Grid */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .metric-card {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-strong);
+    }
+
+    .metric-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .metric-val {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin: 8px 0 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .metric-val .subtext {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .metric-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .metric-accent-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+    .metric-card.accent .metric-accent-line { background: var(--accent); }
+    .metric-card.emerald .metric-accent-line { background: var(--emerald); }
+    .metric-card.amber .metric-accent-line { background: var(--amber); }
+    .metric-card.rose .metric-accent-line { background: var(--rose); }
+
+    /* Content Layout */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.25s ease-in-out forwards;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Panels & Cards */
+    .panel {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .panel-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Leech Recall Section */
+    .leech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 16px;
+    }
+
+    .leech-card {
+      background: var(--surface-2);
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      position: relative;
+    }
+
+    .leech-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(244, 63, 94, 0.2);
+      color: #fda4af;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .leech-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .leech-state {
+      font-size: 12px;
+      color: var(--amber);
+      font-family: var(--font-mono);
+      margin-bottom: 12px;
+    }
+
+    .recall-drill {
+      background: var(--surface-3);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-size: 13px;
+      margin-top: 10px;
+      border: 1px dashed var(--border-strong);
+    }
+
+    .recall-drill p {
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .reveal-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 5px 12px;
+      font-size: 11.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .reveal-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .hidden-answer {
+      display: none;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      color: #38bdf8;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+    }
+
+    /* Filter & Controls */
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-input {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-family: var(--font-main);
+      width: 280px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+    }
+
+    .pill-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill-btn:hover, .pill-btn.active {
+      color: #fff;
+      background: var(--surface-3);
+      border-color: var(--border-strong);
+    }
+
+    .pill-btn.active {
+      background: var(--accent-glow);
+      border-color: var(--accent);
+      color: #38bdf8;
+    }
+
+    /* Table Styles */
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    table.data-table th {
+      background: var(--surface-2);
+      padding: 12px 16px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table.data-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: middle;
+    }
+
+    table.data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.data-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .problem-name {
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .problem-name a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .problem-name a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .badge-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .tag-clean { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+    .tag-hints { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+    .tag-leech { background: rgba(244, 63, 94, 0.15); color: #f87171; }
+    .tag-queued { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+
+    .complexity-tag {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    /* Proof Interactive Simulator */
+    .proof-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .proof-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .proof-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .proof-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .proof-step {
+      background: var(--surface-1);
+      border-left: 3px solid var(--accent);
+      padding: 12px 14px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 13px;
+    }
+
+    .proof-step .step-num {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 2px;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    /* Interactive Timeline Visualizer */
+    .timeline-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .interval-bar {
+      height: 28px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      transition: all 0.3s;
+    }
+
+    .bar-kept { background: #059669; }
+    .bar-dropped { background: #dc2626; opacity: 0.5; text-decoration: line-through; }
+    .bar-pending { background: #0284c7; }
+
+    /* Session Planner Calculator */
+    .calc-box {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      background: var(--surface-2);
+      padding: 18px;
+      border-radius: var(--radius-md);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .calc-input {
+      background: var(--surface-1);
+      border: 1px solid var(--border-strong);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 8px 14px;
+      width: 120px;
+      border-radius: var(--radius-sm);
+      outline: none;
+    }
+
+    .calc-res {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .calc-res strong {
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 40px;
+      color: var(--text-dim);
+      font-size: 12px;
+      font-family: var(--font-mono);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Top Header -->
+    <header class="top-bar">
+      <div class="brand-title">
+        <h1>
+          Prep Signal 
+          <span class="badge-sprint">Day 38 · Sprint Mode</span>
+        </h1>
+        <p>Unified SDE Prep Cockpit · DSA Greedy & Spaced Repetition Engine</p>
+      </div>
+      <div class="header-actions">
+        <div class="status-chip">
+          <div class="status-dot"></div>
+          <span>Weekend Batch 2 Active</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Metrics Ribbon -->
+    <div class="metrics-row">
+      <div class="metric-card accent">
+        <div class="metric-accent-line"></div>
+        <div class="metric-label">Target Completion</div>
+        <div class="metric-val">2026-11-30</div>
+        <div class="metric-desc">DSA End-to-End Coverage Mode</div>
+      </div>
+      <div class="metric-card emerald">
+        <div class="metric-accent-line"></div>
+        <div class="metric-label">Yesterday's Batch</div>
+        <div class="metric-val">12 <span class="subtext">Cleared</span></div>
+        <div class="metric-desc">18-session review drought ended</div>
+      </div>
+      <div class="metric-card amber">
+        <div class="metric-accent-line"></div>
+        <div class="metric-label">Active Review Due</div>
+        <div class="metric-val">60 <span class="subtext">Items</span></div>
+        <div class="metric-desc">Cap 12 per weekend session</div>
+      </div>
+      <div class="metric-card rose">
+        <div class="metric-accent-line"></div>
+        <div class="metric-label">Critical Leeches</div>
+        <div class="metric-val">3 <span class="subtext">Active</span></div>
+        <div class="metric-desc">Daily recall protocol enabled</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" onclick="switchTab('cockpit')">
+        <span>📊 Sprint Cockpit</span>
+      </button>
+      <button class="nav-tab" onclick="switchTab('greedy-catalog')">
+        <span>⚡ Greedy Problem Index</span>
+        <span class="tab-badge">12 Active</span>
+      </button>
+      <button class="nav-tab" onclick="switchTab('proof-simulator')">
+        <span>📐 Proof & Exchange Visualizer</span>
+      </button>
+      <button class="nav-tab" onclick="switchTab('traps-journal')">
+        <span>🧠 Common Traps & Checklist</span>
+      </button>
+      <button class="nav-tab" onclick="switchTab('session-planner')">
+        <span>🎯 Session Planner & Due Queue</span>
+      </button>
+    </nav>
+
+    <!-- TAB 1: COCKPIT -->
+    <div id="tab-cockpit" class="tab-pane active">
+      
+      <!-- Critical Leech Section -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span style="color: var(--rose);">⚠️</span> Critical Leech Recalls (Test Before Code)
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);">Requires 2 consecutive clean answers to graduate</span>
+        </div>
+
+        <div class="leech-grid">
+          
+          <!-- Leech 1 -->
+          <div class="leech-card">
+            <span class="leech-badge">LEECH #1</span>
+            <div class="leech-title">Bellman-Ford Algorithm</div>
+            <div class="leech-state">Status: 0/2 Clean · Fails on V-1 reason & Vth pass</div>
+            <div class="recall-drill">
+              <p><strong>Drill Q1:</strong> Does Bellman-Ford work on graphs with negative edges? What does a V-th round improvement prove?</p>
+              <p><strong>Drill Q2:</strong> Can a shortest simple path repeat a node? Therefore how many edges at most?</p>
+              <button class="reveal-btn" onclick="toggleAnswer('ans-bf')">Reveal Answer</button>
+              <div id="ans-bf" class="hidden-answer">
+                1. Yes, works with negative edges. V-th update means negative cycle exists.<br>
+                2. Simple path visits at most V nodes without repeating, which has at most V-1 edges.
+              </div>
+            </div>
+          </div>
+
+          <!-- Leech 2 -->
+          <div class="leech-card">
+            <span class="leech-badge">LEECH #2</span>
+            <div class="leech-title">Redundant Connection (DSU)</div>
+            <div class="leech-state">Status: 0/2 Clean · Fails on rank read & cost impact</div>
+            <div class="recall-drill">
+              <p><strong>Drill Q1:</strong> Which single operation reads `rank`?</p>
+              <p><strong>Drill Q2:</strong> Is an inflated rank a correctness bug or a cost bug?</p>
+              <button class="reveal-btn" onclick="toggleAnswer('ans-dsu')">Reveal Answer</button>
+              <div id="ans-dsu" class="hidden-answer">
+                1. Only `union()` reads rank (to attach shorter tree under taller tree).<br>
+                2. Cost bug only! `find()` still finds the right root; time degrades from O(α(N)) toward O(log N).
+              </div>
+            </div>
+          </div>
+
+          <!-- Leech 3 -->
+          <div class="leech-card">
+            <span class="leech-badge">LEECH #3</span>
+            <div class="leech-title">Task Scheduler (LC 621)</div>
+            <div class="leech-state">Status: 1/2 Clean · Formula clean, clamp needs check</div>
+            <div class="recall-drill">
+              <p><strong>Drill Q:</strong> What is the closed-form equation and why is the clamp necessary?</p>
+              <button class="reveal-btn" onclick="toggleAnswer('ans-ts')">Reveal Answer</button>
+              <div id="ans-ts" class="hidden-answer">
+                Formula: max(tasks.length, (maxFreq - 1) * (n + 1) + countMax).<br>
+                Clamp: When idle slots fill up completely, the execution length is simply the total number of tasks.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Policy & Track Readiness Grid -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">Track Readiness Snapshot</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <span><strong>DSA Track</strong></span>
+                <span class="complexity-tag">195/455 import + 75 live</span>
+              </div>
+              <div style="height: 6px; background: var(--surface-3); border-radius: 3px; overflow: hidden;">
+                <div style="width: 59%; height: 100%; background: var(--accent);"></div>
+              </div>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <span><strong>System Design (HLD)</strong></span>
+                <span class="complexity-tag">1/24 Case Studies (Rate Limiter)</span>
+              </div>
+              <div style="height: 6px; background: var(--surface-3); border-radius: 3px; overflow: hidden;">
+                <div style="width: 4%; height: 100%; background: var(--amber);"></div>
+              </div>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <span><strong>Behavioral / STAR</strong></span>
+                <span class="complexity-tag">0 Stories Logged</span>
+              </div>
+              <div style="height: 6px; background: var(--surface-3); border-radius: 3px; overflow: hidden;">
+                <div style="width: 0%; height: 100%; background: var(--rose);"></div>
+              </div>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <span><strong>Java & JVM Internals</strong></span>
+                <span class="complexity-tag">0 Subtopics Logged</span>
+              </div>
+              <div style="height: 6px; background: var(--surface-3); border-radius: 3px; overflow: hidden;">
+                <div style="width: 0%; height: 100%; background: var(--rose);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">Standing Rules & Protocols</div>
+          </div>
+          <ul style="padding-left: 18px; color: var(--text-muted); font-size: 13px; display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>Weekend Review Batch</strong>: Cap 12 problems/session. Full code written on each problem.</li>
+            <li><strong>Weekday Focus</strong>: 100% new problem coverage from Queue. No weekday review drag.</li>
+            <li><strong>Derivations First</strong>: [derive] items start with cold "why" justification before code.</li>
+            <li><strong>Graduation Rule</strong>: 2 consecutive clean passes at Review #3+ retires the problem.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 2: GREEDY CATALOG -->
+    <div id="tab-greedy-catalog" class="tab-pane">
+      
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">DSA Greedy & Interval Scheduling Catalog</div>
+        </div>
+
+        <div class="filter-bar">
+          <input type="text" id="greedy-search" class="search-input" placeholder="Search problem, pattern, complexity..." oninput="filterGreedyTable()">
+          <div class="pill-group">
+            <button class="pill-btn active" onclick="setGreedyFilter('all', this)">All</button>
+            <button class="pill-btn" onclick="setGreedyFilter('Intervals', this)">Intervals</button>
+            <button class="pill-btn" onclick="setGreedyFilter('Exchange', this)">Exchange Argument</button>
+            <button class="pill-btn" onclick="setGreedyFilter('Two-Pass', this)">Two-Pass</button>
+            <button class="pill-btn" onclick="setGreedyFilter('Range', this)">Range Interval</button>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table" id="greedy-table">
+            <thead>
+              <tr>
+                <th>Problem</th>
+                <th>Pattern / Classification</th>
+                <th>Status</th>
+                <th>Complexity (Time / Space)</th>
+                <th>Key Invariant & Load-Bearing Watchpoint</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-category="Intervals" data-name="non overlapping intervals lc 435">
+                <td>
+                  <div class="problem-name">
+                    <a href="https://leetcode.com/problems/non-overlapping-intervals/" target="_blank">Non-overlapping Intervals (LC 435) ↗</a>
+                  </div>
+                </td>
+                <td><span class="badge-tag tag-clean">Intervals</span></td>
+                <td><span class="badge-tag tag-hints">Hints: 1</span></td>
+                <td><span class="complexity-tag">O(N log N) / O(N)</span></td>
+                <td>Keep earliest end-time. <code>int[][]</code> is object array &rarr; TimSort O(N) space.</td>
+              </tr>
+
+              <tr data-category="Intervals" data-name="merge intervals lc 56">
+                <td>
+                  <div class="problem-name">
+                    <a href="https://leetcode.com/problems/merge-intervals/" target="_blank">Merge Intervals (LC 56) ↗</a>
+                  </div>
+                </td>
+                <td><span class="badge-tag tag-clean">Intervals</span></td>
+                <td><span class="badge-tag tag-clean">Clean</span></td>
+                <td><span class="complexity-tag">O(N log N) / O(N)</span></td>
+                <td>Sort by start. Compare only with <code>last</code> interval. Tie-break by end is dead code.</td>
+              </tr>
+
+              <tr data-category="Exchange" data-name="shortest job first gfg">
+                <td>
+                  <div class="problem-name">
+                    <a href="https://www.geeksforgeeks.org/problems/shortest-job-first/1" target="_blank">Shortest Job First (GFG) ↗</a>
+                  </div>
+                </td>
+                <td><span class="badge-tag tag-clean">Exchange</span></td>
+                <td><span class="badge-tag tag-clean">Clean</span></td>
+                <td><span class="complexity-tag">O(N log N) / O(log N)</span></td>
+                <td>Shortest burst minimizes sum of prefix waiting times. Primitive <code>int[]</code> &rarr; O(log N).</td>
+              </tr>
+
+              <tr data-category="Exchange" data-name="lemonade change lc 860">
+                <td>
+                  <div class="problem-name">
+                    <a href="https://leetcode.com/problems/lemonade-change/" target="_blank">Lemonade Change (LC 860) ↗</a>
+                  </div>
+                </td>
+                <td><span class="badge-tag tag-clean">Exchange</span></td>
+                <td><span class="badge-tag tag-hints">Hints: 1</span></td>
+                <td><span class="complexity-tag">O(N) / O(1)</span></td>
+                <td>Customer queue order is fixed (DO NOT SORT). Prefer giving $10+$5 over 3x$5.</td>
+              </tr>
+
+              <tr data-category="Range" data-name="valid parenthesis string lc 678">
+                <td>
+                  <div class="problem-name">
+                    <a href="https://leetcode.com/problems/valid-parenthesis-string/" target="_blank">Valid Parenthesis String (LC 678) ↗</a>
+                  </div>
+                </td>
+                <td><span class="badge-tag tag-clean">Range</span></td>
+                <td><span class="badge-tag tag-hints">Hints: Many</span></td>
+                <td><span class="complexity-tag">O(N) / O(N)</span></td>
+                <td>Track reachable <code>[min_open, max_open]</code>. Clamp min to 0. Accept if min==0.</td>
+              </tr>
+
+              <tr data-category="Two-Pass" data-name="candy lc 135">
+                <td>
+                  <div class="problem-name">
+                    <a href="https://leetcode.com/problems/candy/" target="_blank">Candy (LC 135) ↗</a>
+                  </div>
+                </td>
+                <td><span class="badge-tag tag-clean">Two-Pass</span></td>
+                <td><span class="badge-tag tag-hints">Hints: Many</span></td>
+                <td><span class="complexity-tag">O(N) / O(N)</span></td>
+                <td>Left pass + Right pass. Merged with <code>max(L[i], R[i])</code> preserving both constraints.</td>
+              </tr>
+
+              <tr data-category="Exchange" data-name="fractional knapsack gfg">
+                <td>
+                  <div class="problem-name">
+                    <a href="https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1" target="_blank">Fractional Knapsack (GFG) ↗</a>
+                  </div>
+                </td>
+                <td><span class="badge-tag tag-clean">Exchange</span></td>
+                <td><span class="badge-tag tag-hints">Hints: Several</span></td>
+                <td><span class="complexity-tag">O(N log N) / O(N)</span></td>
+                <td>Sort by value/weight ratio descending. Take full units then fractional part of remainder.</td>
+              </tr>
+
+              <tr data-category="Intervals" data-name="insert interval lc 57">
+                <td>
+                  <div class="problem-name">
+                    <a href="https://leetcode.com/problems/insert-interval/" target="_blank">Insert Interval (LC 57) ↗</a>
+                  </div>
+                </td>
+                <td><span class="badge-tag tag-clean">Intervals</span></td>
+                <td><span class="badge-tag tag-queued">Queued</span></td>
+                <td><span class="complexity-tag">O(N) / O(N)</span></td>
+                <td>Three phases: left non-overlapping &rarr; merge overlapping with new &rarr; right non-overlapping.</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 3: PROOF SIMULATOR -->
+    <div id="tab-proof-simulator" class="tab-pane">
+      
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">Greedy Exchange Proof Interactive Walkthroughs</div>
+          <span style="font-size: 12px; color: var(--text-muted);">Master the 4 fundamental justification shapes</span>
+        </div>
+
+        <!-- Proof Shape 1: State Domination -->
+        <div class="proof-card">
+          <div class="proof-header">
+            <div>
+              <div class="proof-title">Shape 1: State-Domination Swap (e.g. Lemonade Change)</div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Why spend $10 + $5 instead of $5 + $5 + $5 on a $20 customer?</p>
+            </div>
+            <span class="badge-tag tag-clean">State Domination</span>
+          </div>
+
+          <div class="proof-steps">
+            <div class="proof-step">
+              <div class="step-num">Step 1 · The Two Choices</div>
+              <div>Plan A (Greedy): Pay 1&times;$10 and 1&times;$5.<br>Plan B (Rival): Pay 3&times;$5.</div>
+            </div>
+            <div class="proof-step">
+              <div class="step-num">Step 2 · Post-Transaction Wallet Delta</div>
+              <div>Compare your remaining inventory: Plan A leaves you with <strong>2 extra $5 bills</strong> and <strong>1 fewer $10 bill</strong> compared to Plan B.</div>
+            </div>
+            <div class="proof-step">
+              <div class="step-num">Step 3 · Capability Dominance</div>
+              <div>A $5 bill can satisfy any customer that a $10 bill can (plus $10 customers, which a $10 bill cannot serve). Therefore, holding 2&times;$5 strictly dominates holding 1&times;$10. Plan A can never fail where Plan B succeeds.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proof Shape 2: Earliest End Horizon -->
+        <div class="proof-card">
+          <div class="proof-header">
+            <div>
+              <div class="proof-title">Shape 2: Earliest-End Horizon (e.g. Non-overlapping Intervals)</div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Why always pick the interval with the smallest finish time?</p>
+            </div>
+            <span class="badge-tag tag-clean">Horizon Maximization</span>
+          </div>
+
+          <div class="timeline-box">
+            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">Visual Horizon Comparison:</div>
+            
+            <div class="timeline-row">
+              <div style="width: 140px; font-size: 12px;">Greedy [1, 3]:</div>
+              <div class="interval-bar bar-kept" style="width: 120px;">[1, 3] Finishes @ 3</div>
+              <div style="flex: 1; border-bottom: 2px dashed #059669; margin: 0 10px;"></div>
+              <span style="font-size: 11px; color: #34d399; font-family: var(--font-mono);">Free Horizon: [3, &infin;)</span>
+            </div>
+
+            <div class="timeline-row">
+              <div style="width: 140px; font-size: 12px;">Rival [1, 7]:</div>
+              <div class="interval-bar bar-dropped" style="width: 240px;">[1, 7] Finishes @ 7</div>
+              <div style="flex: 1; border-bottom: 2px dashed #dc2626; margin: 0 10px;"></div>
+              <span style="font-size: 11px; color: #f87171; font-family: var(--font-mono);">Free Horizon: [7, &infin;)</span>
+            </div>
+
+            <div style="margin-top: 14px; font-size: 13px; color: var(--text-muted);">
+              <strong>Core Argument:</strong> Because $3 \le 7$, the available time remaining under Greedy $[3, \infty)$ is a superset of the rival's $[7, \infty)$. Any subsequent non-overlapping choice available to the rival is also available to Greedy.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 4: TRAPS JOURNAL -->
+    <div id="tab-traps-journal" class="tab-pane">
+      
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">Critical Mistake Patterns & Checklist</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          
+          <div style="background: var(--surface-2); border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--border);">
+            <div style="font-weight: 700; color: var(--rose); margin-bottom: 8px;">1. Primitive vs Object Sort Space</div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
+              <code>Arrays.sort(int[])</code> uses Dual-Pivot Quicksort &rarr; <strong>O(log N)</strong> stack space.
+            </p>
+            <p style="font-size: 13px; color: var(--text-muted);">
+              <code>Arrays.sort(int[][])</code> or <code>Integer[]</code> uses TimSort &rarr; requires an auxiliary merge buffer of up to <strong>O(N)</strong> space.
+            </p>
+          </div>
+
+          <div style="background: var(--surface-2); border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--border);">
+            <div style="font-weight: 700; color: var(--amber); margin-bottom: 8px;">2. Ground Compressed State First</div>
+            <p style="font-size: 13px; color: var(--text-muted);">
+              When carrying a compressed state (like <code>(min, max)</code> in LC 678), define what the numbers range over <em>before</em> coding mechanics. If you can't state what <code>min</code> represents, the bail-out and clamp rules will fail.
+            </p>
+          </div>
+
+          <div style="background: var(--surface-2); border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--border);">
+            <div style="font-weight: 700; color: var(--accent); margin-bottom: 8px;">3. Trace Inputs; Never Patch Lines blindly</div>
+            <p style="font-size: 13px; color: var(--text-muted);">
+              When a sample fails, trace the exact variables step-by-step through the logic. Guessing which line is wrong and patching it creates false regressions.
+            </p>
+          </div>
+
+          <div style="background: var(--surface-2); border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--border);">
+            <div style="font-weight: 700; color: var(--emerald); margin-bottom: 8px;">4. Set vs Sequence Distinction</div>
+            <p style="font-size: 13px; color: var(--text-muted);">
+              Never sort an array if the sequence carries semantic temporal meaning (e.g. Lemonade Change queue). Sort only when order is arbitrary or selection-based.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 5: SESSION PLANNER -->
+    <div id="tab-session-planner" class="tab-pane">
+      
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">Session Capacity & Target Calculator</div>
+        </div>
+
+        <div class="calc-box">
+          <label style="font-weight: 600; color: var(--text-muted);">Session Duration (mins):</label>
+          <input type="number" id="session-mins" class="calc-input" value="45" oninput="recalcSession()">
+          <div class="calc-res" id="calc-output">
+            Capacity: <strong>~2 Problems</strong> (or 1 Leech Recall + 1 Full Problem).
+          </div>
+        </div>
+
+        <div class="panel-title" style="margin: 20px 0 12px; font-size: 15px;">Today's Recommended Execution Queue:</div>
+        
+        <ol style="padding-left: 20px; font-size: 13.5px; color: var(--text); display: flex; flex-direction: column; gap: 10px;">
+          <li>
+            <strong>Leech Protocol Recall (10 mins)</strong>: Rapid cold drill on <code>Bellman-Ford</code>, <code>Redundant Connection</code>, and <code>Task Scheduler</code>.
+          </li>
+          <li>
+            <strong>Weekend Batch 2 Review (30-40 mins)</strong>:
+            <ul style="padding-left: 20px; margin-top: 4px; color: var(--text-muted);">
+              <li><code>Merge Intervals (LC 56)</code> &mdash; Review #1</li>
+              <li><code>Shortest Job First</code> &mdash; Review #1</li>
+              <li><code>Non-overlapping Intervals (LC 435)</code> &mdash; Review #1</li>
+              <li><code>Kth Largest Element</code> &mdash; Review #2</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Wrap-up & Persistence (5 mins)</strong>: Run <code>interview-prep-save</code> to log deep work duration and update mastery scores.
+          </li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Prep Signal v2.4 · Integrated Sprint Architecture · Generated 2026-08-16
+    </footer>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+
+      const targetPane = document.getElementById('tab-' + tabId);
+      if (targetPane) targetPane.classList.add('active');
+
+      const tabs = Array.from(document.querySelectorAll('.nav-tab'));
+      const activeTab = tabs.find(t => t.getAttribute('onclick').includes(tabId));
+      if (activeTab) activeTab.classList.add('active');
+    }
+
+    function toggleAnswer(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.display = el.style.display === 'block' ? 'none' : 'block';
+      }
+    }
+
+    function filterGreedyTable() {
+      const search = document.getElementById('greedy-search').value.toLowerCase();
+      const rows = document.querySelectorAll('#greedy-table tbody tr');
+      rows.forEach(row => {
+        const name = row.getAttribute('data-name');
+        const text = row.innerText.toLowerCase();
+        if (name.includes(search) || text.includes(search)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    let activeCategory = 'all';
+    function setGreedyFilter(category, btn) {
+      document.querySelectorAll('.pill-group .pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = category;
+
+      const rows = document.querySelectorAll('#greedy-table tbody tr');
+      rows.forEach(row => {
+        const cat = row.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    function recalcSession() {
+      const mins = parseInt(document.getElementById('session-mins').value) || 0;
+      const output = document.getElementById('calc-output');
+      if (mins < 30) {
+        output.innerHTML = `Capacity: <strong>1 Quick Problem / Leech Drill only</strong> (~${mins} min block).`;
+      } else if (mins <= 60) {
+        output.innerHTML = `Capacity: <strong>~2 Problems</strong> (or 1 Leech Recall + 1 Full Problem). Expected end: ~${mins}m.`;
+      } else if (mins <= 120) {
+        output.innerHTML = `Capacity: <strong>~3-4 Problems</strong> (Full Block session).`;
+      } else {
+        output.innerHTML = `Capacity: <strong>Weekend Batch Session (5-8 reviews)</strong>.`;
+      }
+    }
+  </script>
+</body>
+</html>

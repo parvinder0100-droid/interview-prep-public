@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grammarly HLD - Excalidraw</title>
+  <style>
+    html, body, #root {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
+  <!-- React & ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- Excalidraw -->
+  <script src="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.production.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    fetch('./grammarly_hld.excalidraw')
+      .then(res => res.json())
+      .then(data => {
+        const App = () => {
+          return React.createElement(
+            "div",
+            { style: { width: "100vw", height: "100vh" } },
+            React.createElement(ExcalidrawLib.Excalidraw, {
+              initialData: {
+                elements: data.elements,
+                appState: {
+                  ...data.appState,
+                  viewBackgroundColor: "#f8f9fa"
+                },
+                scrollToContent: true
+              }
+            })
+          );
+        };
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(React.createElement(App));
+      })
+      .catch(err => {
+        document.getElementById("root").innerHTML = "<p style='padding:20px; font-family:sans-serif;'>Loading diagram: " + err.message + "</p>";
+      });
+  </script>
+</body>
+</html>
